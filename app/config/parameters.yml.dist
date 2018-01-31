@@ -1,0 +1,20 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: null
+    database_name: ~
+    database_user: root
+    database_password: root
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: ~
+    mailer_email: ~
+    mailer_password:
+    mailer_name: VIN checker
+    secret: 8c3e4d0ea20a421f9ac8ddd93f430b81564ba81e
+    locale: pl
+    locales:
+        - pl
+    pagination:
+        perPage: 15
+    assets_version: v1

@@ -1,0 +1,21 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+{% block metaTitle %}{% spaceless %}
+    {% if page %}{% if page.translate.seoTitle is defined %}{{ page.translate.seoTitle }} : {% endif %}{{ parent() }}{% else %}{{ parent() }}{% endif %}
+{% endspaceless %}{% endblock %}
+
+{% block metaDescription %}{% spaceless %}
+    {% if page %}{% if page.translate.seoDescription is defined %}{{ page.translate.seoDescription }}, {% endif %}{% endif %}{{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block seoKeywords %}{% spaceless %}
+    {% if page %}{% if page.translate.seoKeywords is defined %}{{ page.translate.seoKeywords }}, {{ parent() }}{% endif %}{% endif %}{{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+    <div class="col-lg-12 text-center">
+        {% if page is defined %}
+            {{ page.translate.description|raw }}
+        {% endif %}
+    </div>
+{% endblock %}

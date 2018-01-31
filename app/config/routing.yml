@@ -1,0 +1,25 @@
+app_admin:
+    resource: "@AppAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+app_user:
+    resource: "@AppUserBundle/Resources/config/routing.yml"
+
+app.elfinder:
+     resource: "@AppAdminBundle/Resources/config/routing/elfinder.yml"
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+JMSTranslationBundle_ui:
+    resource: "@JMSTranslationBundle/Controller/"
+    type:     annotation
+    prefix:   /admin/_trans
+
+app_front:
+    resource: "@AppFrontBundle/Resources/config/routing.yml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /admin/
+

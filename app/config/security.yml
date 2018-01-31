@@ -1,0 +1,54 @@
+## To get started with security, check out the documentation:
+## http://symfony.com/doc/current/security.html
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        main:
+            pattern: ^/admin
+            form_login:
+                provider: fos_userbundle
+                login_path: /admin/login
+                check_path: /admin/login_check
+                csrf_token_generator: security.csrf.token_manager
+                always_use_default_target_path: false
+                default_target_path: /admin
+            logout:
+                path:           /admin/logout
+                target:         /admin/login
+            anonymous:    true
+        agent:
+            pattern: ^/*
+            form_login:
+                provider: fos_userbundle
+                login_path: /agent/login
+                check_path: /agent/login_check
+                csrf_token_generator: security.csrf.token_manager
+                always_use_default_target_path: false
+                default_target_path: /agent/profile
+            logout:
+                path:           /admin/logout
+                target:         /admin/login
+            anonymous:    true
+
+    access_control:
+            - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/admin, roles: ROLE_ADMIN }
+            - { path: ^/efconnect, role: ROLE_ADMIN }
+            - { path: ^/elfinder, role: ROLE_ADMIN }
+            - { path: ^/agent/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/agent, roles: ROLE_AGENT }
+
+    role_hierarchy:
+            ROLE_ADMIN: ROLE_USER
+            ROLE_SUPER_ADMIN: [ROLE_ADMIN]
+            ROLE_AGENT: ~

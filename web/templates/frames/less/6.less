@@ -1,0 +1,94 @@
+.puppy-card.puppy-card-6 {
+  .layer {
+    &.layer-image {
+
+    }
+    &.layer-layout {
+      background-image: url(/templates/frames/img/layouts/6/layout.png);
+    }
+    &.layer-adopt-me {
+      background-image: url(/templates/frames/img/badge-adopt-me.png);
+    }
+    &.layer-content {
+      .content {
+        &.content-name {
+          top: 59%;
+          left: 20%;
+          width: 60%;
+          height: 7.2%;
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          align-items: center;
+          -webkit-flex-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          justify-content: center;
+          -webkit-justify-content: center;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 1.5em;
+          font-family: 'UnitedSansRg';
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+        &.content-location {
+          top: 65.4%;
+          left: 34%;
+          width: 32%;
+          height: 3.5%;
+          text-align: center;
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          align-items: center;
+          -webkit-flex-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          justify-content: center;
+          -webkit-justify-content: center;
+          color: #663727;
+          text-transform: uppercase;
+          font-size: 0.9em;
+          font-family: 'UnitedSansRg';
+          text-align: center;
+        }
+        &.content-statistics {
+          top: 74%;
+          left: 9%;
+          width: 82%;
+          min-height: 20%;
+          height: auto;
+          .statistic {
+            float: left;
+            width: 50%;
+            margin-bottom: 1em;
+            &:nth-child(2n + 3) {
+              clear: both;
+            }
+            .label {
+              background-color: #409637;
+              color: #ffe00d;
+              font-family: 'UnitedSansRg';
+              margin-left: -0.5em;
+            }
+            .value {
+              font-family: 'UnitedSansRg';
+              font-weight: bold;
+              color: #fff;
+              font-size: 1.2em;
+              text-transform: uppercase;
+              line-height: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

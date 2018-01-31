@@ -1,0 +1,94 @@
+.puppy-card.puppy-card-1 {
+  .layer {
+    &.layer-image {
+
+    }
+    &.layer-layout {
+      background-image: url(/templates/frames/img/layouts/1/layout.png);
+    }
+    &.layer-adopt-me {
+      background-image: url(/templates/frames/img/badge-adopt-me.png);
+    }
+      &.layer-content {
+        .content {
+          &.content-name {    
+            top: 7.5%;
+            left: 8%;
+            width: 84%;
+            height: 4.2%;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            align-items: center;
+            -webkit-flex-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            /* justify-content: center; */
+            color: #fff;
+            white-space: nowrap;
+            text-transform: uppercase;
+            font-size: 2em;
+            font-family: 'UnitedSansRg';
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          }
+          &.content-location {
+            top: 12%;
+            left: 8%;
+            width: 77%;
+            height: 3.5%;
+            text-align: center;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            align-items: center;
+            -webkit-flex-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            /* justify-content: center; */
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-family: 'UnitedSansRg';
+            font-weight: bold;
+          }
+          &.content-statistics {    
+            top: 66%;
+            left: 8%;
+            width: 55%;
+            min-height: 28%;
+            height: auto;
+            .statistic {
+              padding-bottom: 0.1em;
+              height: 25%;
+              &:nth-child(2n + 3) {
+                clear: both;
+              }
+              .label {
+                display: inline-block;
+                color: #f3e942;
+                font-family: 'UnitedSansRg';
+                line-height: 0.9em;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                padding: 0;
+              }
+              .value {
+                font-family: 'UnitedSansRg';
+                font-weight: bold;
+                color: #fff;
+                font-size: 1.2em;
+                line-height: 0.8em;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,233 @@
+#calendar {
+  padding: 0 1vw;
+  margin-bottom: 4vw;
+}
+@media screen and (max-width: 767px) {
+  #calendar {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+}
+#calendar header h1 {
+  font-size: 34px;
+  line-height: 34px;
+}
+@media screen and (max-width: 767px) {
+  #calendar header h1 {
+    font-size: 26px;
+    line-height: 26px;
+    margin-bottom: 5vh;
+  }
+}
+#calendar .arrow-left:before {
+  content: '';
+  display: inline-block;
+  background-image: url(/bundles/appadmin/img/icons/icon-calendar-arrow-left.png);
+  width: 34px;
+  height: 34px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 4px;
+}
+@media screen and (max-width: 767px) {
+  #calendar .arrow-left:before {
+    width: 26px;
+    height: 26px;
+  }
+}
+#calendar .arrow-right:before {
+  content: '';
+  display: inline-block;
+  background-image: url(/bundles/appadmin/img/icons/icon-calendar-arrow-right.png);
+  width: 34px;
+  height: 34px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 4px;
+}
+@media screen and (max-width: 767px) {
+  #calendar .arrow-right:before {
+    width: 26px;
+    height: 26px;
+  }
+}
+#calendar .week-days {
+  font-size: 0;
+}
+@media screen and (max-width: 767px) {
+  #calendar .week-days {
+    display: none;
+  }
+}
+#calendar .week-days .holder {
+  width: 14.285714%;
+}
+#calendar .week-days .holder.week-day {
+  display: inline-block;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 20px;
+  color: #949494;
+  text-align: center;
+  font-weight: bold;
+}
+#calendar .days {
+  font-size: 0;
+  counter-reset: day;
+}
+#calendar .days .holder {
+  vertical-align: top;
+  display: inline-block;
+  width: 14.285714%;
+  height: calc(8.5714284vw);
+  padding: 1.5px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+}
+#calendar .days .holder.day {
+  counter-increment: day;
+}
+#calendar .days .holder .empty {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eaeaea;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .empty {
+    display: none;
+  }
+}
+#calendar .days .holder .cal-event {
+  position: relative;
+  height: 50%;
+  background: #eaeaea;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event {
+    height: auto;
+  }
+}
+#calendar .days .holder .cal-event:before {
+  position: absolute;
+  top: 0.5vw;
+  left: 0;
+  width: 2.5vw;
+  text-align: center;
+  content: counter(day);
+  font-size: 1.8vw;
+  line-height: 1.8vw;
+  color: #fff;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event:before {
+    top: 10px;
+    width: 10vw;
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+}
+#calendar .days .holder .cal-event a {
+  color: #fff;
+  margin-left: 2.7vw;
+  display: block;
+  font-weight: bold;
+  font-size: 0.7vw;
+  padding-right: 5px;
+  padding-top: 0.55vw;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event a {
+    font-size: 4vw;
+    margin-left: calc(10vw - 15px);
+  }
+}
+#calendar .days .holder .cal-event.green {
+  background-image: url(/bundles/appadmin/img/cal-green-bg.png);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event.green {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
+#calendar .days .holder .cal-event.blue {
+  background-image: url(/bundles/appadmin/img/cal-blue-bg.png);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event.blue {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
+#calendar .days .holder .cal-event.red {
+  background-image: url(/bundles/appadmin/img/cal-red-bg.png);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event.red {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
+#calendar .days .holder .cal-event:only-child {
+  height: 100%;
+}
+#calendar .days .holder .cal-event:only-child a {
+  padding-top: 1.5vw;
+}
+#calendar .days .holder .cal-event:nth-child(1):nth-last-child(3),
+#calendar .days .holder .cal-event:nth-child(2),
+#calendar .days .holder .cal-event:nth-child(3):last-child {
+  height: 33.333333%;
+}
+#calendar .days .holder .cal-event:nth-child(1):nth-last-child(3) a,
+#calendar .days .holder .cal-event:nth-child(2) a,
+#calendar .days .holder .cal-event:nth-child(3):last-child a {
+  padding-top: 0.55vw;
+}
+#calendar .days .holder .cal-event:nth-child(2):last-child {
+  height: 50%;
+}
+@media screen and (max-width: 767px) {
+  #calendar .days .holder .cal-event a {
+    padding-top: 0 !important;
+  }
+}
+h3.calendar-headline {
+  font-size: 34px;
+  color: #000919;
+}
+h3.calendar-headline:before {
+  content: '';
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  background-image: url(/bundles/appadmin/img/icons/icon-headline-calendar.png);
+  background-size: 80%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-top: -10px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 767px) {
+  h3.calendar-headline {
+    font-size: 26px;
+  }
+  h3.calendar-headline:before {
+    width: 26px;
+    height: 26px;
+  }
+}

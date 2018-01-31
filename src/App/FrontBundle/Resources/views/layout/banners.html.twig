@@ -1,0 +1,27 @@
+{% if banners|length %}
+    <section id="banner" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {% for banner in banners %}
+                    {% if loop.index0 > 0 %}
+                        <div class="clearfix"><br/></div>
+                    {% endif %}
+                    {% if banner.fileDesktop %}
+                        <div class="banner-box visible-md visible-lg">
+                            {% if banner.websiteUrl %}<a data-event-click-category="nav-click-event" data-event-click-action="banner|desktop|{{ banner.translate.name }}" class="blockLeaveModal" target="_blank" href="{{ banner.websiteUrl }}">{% endif %}
+                                <img id="" src="{{ banner.fileDesktop | amazonUrl }}" class="img-responsive" alt="">
+                                {% if banner.websiteUrl %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                    {% if banner.fileMobile %}
+                        <div class="banner-box visible-sm visible-xs">
+                            {% if banner.websiteUrl %}<a data-event-click-category="nav-click-event" data-event-click-action="banner|mobile|{{ banner.translate.name }}" class="blockLeaveModal" target="_blank" href="{{ banner.websiteUrl }}">{% endif %}
+                                <img id="" src="{{ banner.fileMobile | amazonUrl }}" class="img-responsive" alt="">
+                                {% if banner.websiteUrl %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,24 @@
+banners_index:
+    path:     /
+    defaults: { _controller: "AppAdminBundle:Banner:index" }
+    methods:  GET
+
+banners_new:
+    path:     /new
+    defaults: { _controller: "AppAdminBundle:Banner:new" }
+    methods:  [GET, POST]
+
+banners_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppAdminBundle:Banner:edit" }
+    methods:  [GET, POST]
+
+banners_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppAdminBundle:Banner:delete" }
+    methods:  GET
+
+banners_status:
+    path:     /{id}/status
+    defaults: { _controller: "AppAdminBundle:Banner:status" }
+    methods:  GET

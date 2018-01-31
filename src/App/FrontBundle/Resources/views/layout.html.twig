@@ -1,0 +1,46 @@
+{% use '@AppFront/layout/blocks.html.twig' %}
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% set seoSettings = seoSettings() %}
+    <title>{% block metaTitle %}{% if seoSettings['seo-title-base'] is defined %}{{ seoSettings['seo-title-base'].translate.description|trim|striptags }}{% endif %}{% endblock %}</title>
+    <meta name="description"
+          content="{% block metaDescription %}{% spaceless %}{% if seoSettings['seo-description-base'] is defined %}{{ seoSettings['seo-description-base'].translate.description|trim|striptags }}{% endif %}{% endspaceless %}{% endblock %}">
+    <meta name="keywords"
+          content="{% block seoKeywords %}{% spaceless %}{% if seoSettings['seo-keywords-base'] is defined %}{{ seoSettings['seo-keywords-base'].translate.description|trim|striptags }}{% endif %}{% endspaceless %}{% endblock %}">
+    {% block additionalMeta %}{% endblock %}
+    <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8c1eae0d-0377-4035-bc18-2429b5e4c0fb.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<!-- Page Content -->
+<body class="{% block bodyClass %}{% endblock %}">
+{% embed '@AppFront/layout/header.html.twig' %}{% endembed %}
+<div class="container">
+    <div class="row">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+{% embed '@AppFront/layout/footer.html.twig' %}{% endembed %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+</body>
+</html>

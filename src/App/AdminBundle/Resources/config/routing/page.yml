@@ -1,0 +1,25 @@
+page_index:
+    path:     /
+    defaults: { _controller: "AppAdminBundle:Page:index" }
+    methods:  GET
+
+page_new:
+    path:     /new
+    defaults: { _controller: "AppAdminBundle:Page:new" }
+    methods:  [GET, POST]
+
+page_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppAdminBundle:Page:edit" }
+    methods:  [GET, POST]
+
+page_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppAdminBundle:Page:delete" }
+    methods:  GET
+
+
+page_status:
+    path:     /{id}/status
+    defaults: { _controller: "AppAdminBundle:Page:status" }
+    methods:  GET

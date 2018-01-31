@@ -1,0 +1,16 @@
+services:
+    # define DoctrineSubscriber for events
+    app.doctrine.subscriber:
+        class: App\AdminBundle\EventListener\DoctrineSubscriber
+        calls:
+                - [ setContainer, ['@service_container'] ]
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    app.front.action_listener:
+        class: App\FrontBundle\EventListener\RequestListener
+        calls:
+                - [ setContainer, ['@service_container'] ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }

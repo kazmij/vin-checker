@@ -1,0 +1,66 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+    'bower_components/jstree/dist/themes/default/style.min.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <div class="clearfix"></div>
+        {% include '@AppAdmin/Category/partials/buttons.html.twig' %}
+
+        <fieldset>
+            <legend>{{ 'Categories list'|trans }}</legend>
+        </fieldset>
+
+        {% if categories|length > 0 %}
+            <div class="jsonTree text-left"></div>
+        {% else %}
+            <p class="text-danger text-left">{{ 'The list is empty'|trans }}</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    'bower_components/jstree/dist/jstree.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% if categories|length > 0 %}
+        <script>
+            var showJsTree = function () {
+                var jstree = $('.jsonTree').jstree({
+                    'core': {
+                        'data': {{ categories|json_encode|raw }},
+                        "themes": {
+                            "variant": "large"
+                        }
+                    }
+                })
+
+                jstree.on('select_node.jstree', function (e, data) {
+                    var id = data.node.id,
+                            select = $(e.currentTarget).parents('.treeContainer:eq(0)').find('select');
+                    select.find('option:selected').prop('selected', false);
+                    select.find('option[value=' + id + ']').prop('selected', true);
+                }).on('loaded.jstree', function (e, data) {
+                    $('.jsonTree').jstree('open_all');
+                })
+            };
+            $(function () {
+                showJsTree();
+            })
+        </script>
+    {% endif %}
+{% endblock %}
+
+
+

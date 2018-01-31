@@ -1,0 +1,19 @@
+block_index:
+    path:     /
+    defaults: { _controller: "AppAdminBundle:Block:index" }
+    methods:  GET
+
+block_new:
+    path:     /new
+    defaults: { _controller: "AppAdminBundle:Block:new" }
+    methods:  [GET, POST]
+
+block_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppAdminBundle:Block:edit" }
+    methods:  [GET, POST]
+
+block_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppAdminBundle:Block:delete" }
+    methods:  GET

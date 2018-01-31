@@ -1,0 +1,24 @@
+agents_index:
+    path:     /
+    defaults: { _controller: "AppAdminBundle:Agent:index" }
+    methods:  GET
+
+agents_new:
+    path:     /new
+    defaults: { _controller: "AppAdminBundle:Agent:new" }
+    methods:  [GET, POST]
+
+agents_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppAdminBundle:Agent:edit" }
+    methods:  [GET, POST]
+
+agents_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppAdminBundle:Agent:delete" }
+    methods:  GET
+
+agents_status:
+    path:     /{id}/status
+    defaults: { _controller: "AppAdminBundle:Agent:status" }
+    methods:  GET

@@ -1,0 +1,38 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+{% block content %}
+        <div class="col-sm-12">
+            <h1>Card "{{ pet.petName }}"</h1>
+
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ pet.id }}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ pet.petName }}</td>
+                </tr>
+                <tr>
+                    <th>Card</th>
+                    <td>
+                        {% if pet.petCard %}
+                            <img style="max-width: 350px;" src="{{ pet.petCardSmaller | amazonUrl }}" class="img-thumbnail"/>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Active</th>
+                    <td>{% if pet.active %}Yes{% else %}No{% endif %}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <ul class="list-unstyled">
+                <li>
+                    <a class="btn btn-primary" href="{{ path('cards_index') }}"><i class="fa fa-arrow-left"></i> Back to the list</a>
+                </li>
+            </ul>
+        </div>
+{% endblock %}

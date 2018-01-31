@@ -1,0 +1,7 @@
+services:
+    app.user_repository:
+        class: App\UserBundle\Repository\UserRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppUserBundle:User]
+        calls:
+                - [ setContainer, ['@service_container'] ]

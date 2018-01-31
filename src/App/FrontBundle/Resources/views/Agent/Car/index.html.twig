@@ -1,0 +1,85 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+{% block metaTitle %}{% spaceless %}
+    Profil agenta - {{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-2 col-sm-12">
+        {% include '@AppFront/Agent/Profile/partials/nav.html.twig' %}
+    </div>
+    <div class="col-md-10 col-sm-12">
+        <h1 class="text-center pageHeader">Moje pojazdy</h1>
+        {% if pagination|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-striped table-condensed table-hover">
+                    <thead>
+                    <tr>
+                        <th>Miniaturka</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Marka', 'm.name') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Model', 'md.name') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Wersja'|trans, 'mt.name') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'VIN'|trans, 'c.vin') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Rok produkcji'|trans, 'c.yearOfManufacture') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Przebieg(km)'|trans, 'cm.mileage') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Ostatnia szkoda', 'ah.accidentDate') }}</th>
+                        <th>Liczba szkód</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Created at'|trans, 'c.createdAt') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Updated at'|trans, 'c.updatedAt') }}</th>
+                        <th>{{ 'Actions'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for record in pagination %}
+                        <tr>
+                            <td>
+                                {% if record.photos|length and record.photos[0].path %}
+                                    <img class="img-thumbnail" src="{{ ('/uploads/' ~ record.photos[0].path)|imagine_filter('140x140') }}"/>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {{ record.manufacturer ? record.manufacturer.name : '' }}
+                            </td>
+                            <td>
+                                {{ record.model ? record.model.name : '' }}
+                            </td>
+                            <td>
+                                {{ record.modelTrim ? record.modelTrim.name : '' }}
+                            </td>
+                            <td>
+                                {{ record.vin }}
+                            </td>
+                            <td>
+                                {{ record.yearOfManufacture }}
+                            </td>
+                            <td>
+                                {{ record.mileagesHistory.count ? record.mileagesHistory.first.mileage : 0 }}
+                            </td>
+                            <td>
+                                {{ record.accidentsHistory.count ? record.accidentsHistory.first.accidentDate|date('Y-m-d') }}
+                            </td>
+                            <td>
+                                {{ record.accidentsHistory.count }}
+                            </td>
+                            <td>{{ record.createdAt|date('Y-m-d H:i') }}</td>
+                            <td>{{ record.updatedAt|date('Y-m-d H:i') }}</td>
+                            <td>
+                                <a class="btn btn-success" href="{{ path('app_user_agent_cars_edit', {id: record.id}) }}"><i class="fa fa-pencil"></i> Edycja</a>
+                                <a class="btn btn-warning" href="{{ path('app_user_agent_cars_accident', {id: record.id}) }}"><i class="fa fa-history"></i> Historia szkód</a>
+                                <a title="Usuń samochód" href="{{ path('app_user_agent_cars_remove', {id: record.id}) }}"
+                                   class="btn btn-danger confirmAction"><i class="fa fa-trash"></i> Usuń</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p class="text-danger text-left">{{ 'The list is empty'|trans }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

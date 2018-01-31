@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {% stylesheets filter='cssrewrite'
+        'bower_components/bootstrap/dist/css/bootstrap.min.css'
+        'bower_components/metisMenu/dist/metisMenu.min.css'
+        '@AppAdminBundle/Resources/public/css/sb-admin-2.min.css'
+        'bower_components/morrisjs/morris.css'
+        '@AppAdminBundle/Resources/public/css/custom.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <link rel="icon" type="image/png" href="/templates/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/templates/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/templates/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/templates/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/templates/favicon-128.png" sizes="128x128" />
+
+    {% block topScripts %}
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock %}
+</head>
+<body>
+{% block html %}
+    <div id="wrapper">
+        {% block nav %}
+            {% include '@AppAdmin/layout/nav.html.twig' %}
+        {% endblock %}
+        <div id="page-wrapper">
+            {% block alerts %}
+                {% include '@AppAdmin/layout/alerts.html.twig' %}
+            {% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% include 'partials/modals.html.twig' %}
+
+{% block javascripts %}
+    {% javascripts
+    'bower_components/jquery/jquery.js'
+    'bower_components/bootstrap/dist/js/bootstrap.js'
+    'bower_components/metisMenu/dist/metisMenu.min.js'
+    'bower_components/raphael/raphael.min.js'
+    'bower_components/morrisjs/morris.min.js'
+    '@A2lixTranslationFormBundle/Resources/public/js/a2lix_translation_bootstrap.js'
+    '@AppAdminBundle/Resources/public/js/sb-admin-2.js'
+    '@AppAdminBundle/Resources/public/js/app.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
+</html>

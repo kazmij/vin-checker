@@ -1,0 +1,37 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+{% block metaTitle %}{% spaceless %}
+    Profil agenta - {{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-2 col-sm-12">
+        {% include '@AppFront/Agent/Profile/partials/nav.html.twig' %}
+    </div>
+    <div class="col-md-10 col-sm-12">
+        <h1 class="text-center pageHeader">Moj profil</h1>
+        <div class="panel panel-success">
+            <div class="panel-heading">Moje dane</div>
+            <div class="panel-body">
+                <table class="table table-hover table-condensed table-bordered">
+                    <tr>
+                        <th>Nazwa uzytkownika</th>
+                        <td>{{ app.user.username }}</td>
+                    </tr>
+                    <tr>
+                        <th>Imie i nazwisko</th>
+                        <td>{{ app.user.firstname ~ ' ' ~ app.user.lastname }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ app.user.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Konto utworzono</th>
+                        <td>{{ app.user.createdAt.format('Y-m-d H:i') }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+{% endblock %}

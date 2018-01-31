@@ -1,0 +1,422 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: parameters.php }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+framework:
+    esi: { enabled: true }
+    fragments: { path: /_fragment }
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments: ~
+    http_method_override: true
+    assets:
+        version: '%assets_version%'
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'form/fields.html.twig'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        types: #this is about this line and line below
+            json:     \Doctrine\DBAL\Types\StringType
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+#        metadata_cache_driver: apcu
+#        query_cache_driver: apcu
+#        result_cache_driver: apcu
+#        metadata_cache_driver: redis
+#        query_cache_driver: redis
+#        result_cache_driver: redis
+        filters:
+            oneLocale:
+                  class: A2lix\I18nDoctrineBundle\Doctrine\ORM\Filter\OneLocaleFilter
+                  enabled: true
+        dql:
+          datetime_functions:
+            YEAR: App\AdminBundle\Doctrine\Extension\DQL\YearFunction
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+     cssrewrite: ~
+     less:
+       node: /usr/local/bin/node
+       node_paths: [/usr/local/lib/node_modules]
+     uglifyjs2:
+       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
+     uglifycss:
+       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
+    bundles:
+        - AppAdminBundle
+        - AppFrontBundle
+        - AppUserBundle
+    variables:
+        locale: "%locales%"
+    assets:
+      BwModelica:
+        inputs: 'templates/fonts/BwModelica-ExtraBold.otf'
+        output: 'fonts/BwModelica-ExtraBold.otf'
+      UnitedSansRgMd:
+        inputs: 'templates/fonts/UnitedSansRgMd.otf'
+        output: 'fonts/UnitedSansRgMd.otf'
+      UnitedSansRgBk:
+        inputs: 'templates/fonts/UnitedSansRgBk.otf'
+        output: 'fonts/UnitedSansRgBk.otf'
+
+knp_doctrine_behaviors:
+    timestampable: true
+    translatable: true
+    sluggable:      true
+    soft_deletable: true
+    tree: true
+
+a2lix_i18n_doctrine:
+    manager_registry: doctrine
+
+a2lix_translation_form:
+    locale_provider: default       # [1]
+    locales: "%locales%"      # [1-a]
+    default_locale: "%locale%"             # [1-b]
+    required_locales: ["%locale%"]         # [1-c]
+    templating: "A2lixTranslationFormBundle::default.html.twig"      # [2]
+
+stfalcon_tinymce:
+        #include_jquery: true
+        tinymce_jquery: true
+        selector: ".tinymce"
+        use_callback_tinymce_init: true
+        theme:
+            # Simple theme: same as default theme
+            simple: ~
+            # Advanced theme with almost all enabled plugins
+            advanced:
+                 extended_valid_elements: "*[*]"
+                 valid_elements: "*[*]"
+                 file_browser_callback : elFinderBrowser
+                 plugins:
+                     - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
+                     - "searchreplace wordcount visualblocks visualchars code fullscreen"
+                     - "insertdatetime media nonbreaking save table contextmenu directionality"
+                     - "emoticons template paste textcolor"
+                 toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                 toolbar2: "print preview media | forecolor backcolor emoticons | stfalcon | example"
+                 image_advtab: true
+                 templates:
+                     - {title: 'Test template 1', content: 'Test 1'}
+                     - {title: 'Test template 2', content: 'Test 2'}
+            # BBCode tag compatible theme (see http://www.bbcode.org/reference.php)
+            bbcode:
+                 plugins: ["bbcode, code, link, preview"]
+                 menubar: false
+                 toolbar1: "bold,italic,underline,undo,redo,link,unlink,removeformat,cleanup,code,preview"
+
+fm_elfinder:
+    #assets_path: / # default is /assets, this is where css/js elfinder files are
+    instances:
+        default:
+            locale: "%locale%" # defaults to current request locale
+            editor: tinymce4 # other options are tinymce, tinymce4, fm_tinymce, form, simple, custom
+            #editor_template: custom template for your editor # default null
+            #path_prefix: / # for setting custom assets path prefix, useful for non vhost configurations, i.e. http://127.0.0.1/mysite/
+            #fullscreen: true|false # default is true, applies to simple and ckeditor editors
+            #theme: smoothness # jquery theme, default is 'smoothness'
+            include_assets: true # disable if you want to manage loading of javascript and css assets manually
+            #visible_mime_types: ['image/png', 'image/jpg', 'image/jpeg'] # only show these mime types, defaults to show all
+            connector:
+                #debug: true|false # defaults to false
+                roots:       # at least one root must be defined, defines root filemanager directories
+                    uploads:
+                        #show_hidden: true|false # defaults to false, hides dotfiles
+                        driver: LocalFileSystem
+                        path: uploads
+                        tmb_path: tmb
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf']
+                        upload_deny: ['all']
+                        upload_max_size: 15M # also file upload sizes restricted in php.ini
+                        #attributes: example of setting attributes permission
+                        #    - { pattern: '/(.*?)/', read: true, write: false, locked: true }
+        inline:
+            locale: "%locale%" # defaults to current request locale
+            editor: simple # other options are tinymce, tinymce4, fm_tinymce, form, simple, custom
+            #editor_template: custom template for your editor # default null
+            #path_prefix: / # for setting custom assets path prefix, useful for non vhost configurations, i.e. http://127.0.0.1/mysite/
+            #fullscreen: true|false # default is true, applies to simple and ckeditor editors
+            #theme: smoothness # jquery theme, default is 'smoothness'
+            include_assets: true # disable if you want to manage loading of javascript and css assets manually
+            #visible_mime_types: ['image/png', 'image/jpg', 'image/jpeg'] # only show these mime types, defaults to show all
+            connector:
+                #debug: true|false # defaults to false
+                roots:       # at least one root must be defined, defines root filemanager directories
+                    uploads:
+                        #show_hidden: true|false # defaults to false, hides dotfiles
+                        driver: LocalFileSystem
+                        path: uploads
+                        tmb_path: tmb
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf']
+                        upload_deny: ['all']
+                        upload_max_size: 15M # also file upload sizes restricted in php.ini
+                        #attributes: example of setting attributes permission
+                        #    - { pattern: '/(.*?)/', read: true, write: false, locked: true }
+
+        form:
+            locale: "%locale%" # defaults to current request locale
+            editor: form # other options are tinymce, tinymce4, fm_tinymce, form, simple, custom
+            #editor_template: custom template for your editor # default null
+            #path_prefix: / # for setting custom assets path prefix, useful for non vhost configurations, i.e. http://127.0.0.1/mysite/
+            #fullscreen: true|false # default is true, applies to simple and ckeditor editors
+            #theme: smoothness # jquery theme, default is 'smoothness'
+            include_assets: true # disable if you want to manage loading of javascript and css assets manually
+            #visible_mime_types: ['image/png', 'image/jpg', 'image/jpeg'] # only show these mime types, defaults to show all
+            connector:
+                #debug: true|false # defaults to false
+                roots:       # at least one root must be defined, defines root filemanager directories
+                    uploads:
+                        #show_hidden: true|false # defaults to false, hides dotfiles
+                        driver: LocalFileSystem
+                        path: uploads
+                        tmb_path: tmb
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf']
+                        upload_deny: ['all']
+                        upload_max_size: 15M # also file upload sizes restricted in php.ini
+                        #attributes: example of setting attributes permission
+                        #    - { pattern: '/(.*?)/', read: true, write: false, locked: true }
+
+knp_menu:
+    # use "twig: false" to disable the Twig extension and the TwigRenderer
+    twig:
+        template: KnpMenuBundle::menu.html.twig
+    #  if true, enables the helper for PHP templates
+    templating: false
+    # the renderer to use, list is also available by default
+    default_renderer: twig
+
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: 'KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
+        sortable: ':pagination:sortable_link.html.twig' # sort link template
+
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
+    filter_sets:
+        cache: ~
+        # the name of the "filter set"
+        1024x768:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                thumbnail: { size: [1024, 768], mode: outbound }
+
+        800x550:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                  upscale: { min: [800, 550] }
+                  thumbnail: { size: [800, 550], mode: outbound, allow_upscale: true }
+
+        650x905:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                  upscale: { min: [650, 905] }
+                  thumbnail: { size: [650, 905], mode: outbound, allow_upscale: true }
+
+        455x648:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                  upscale: { min: [455, 648] }
+                  thumbnail: { size: [455, 648], mode: outbound, allow_upscale: true }
+        372x530:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                  thumbnail: { size: [372, 530], mode: outbound }
+
+        240x235:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                  thumbnail: { size: [240, 235], mode: outbound }
+
+        140x140:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                  thumbnail: { size: [140, 140], mode: outbound }
+
+        100x100:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                  thumbnail: { size: [100, 100], mode: outbound }
+
+        91x91:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                  thumbnail: { size: [91, 91], mode: outbound }
+
+        thumb:
+            # adjust the image quality to 75%
+            quality: 100
+
+            # list of transformations to apply (the "filters")
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                thumbnail: { size: [120, 90], mode: outbound }
+
+jms_i18n_routing:
+    default_locale: '%locale%'
+    locales: '%locales%'
+    strategy: prefix_except_default
+
+jms_di_extra:
+    locations:
+        all_bundles: false
+        bundles: [AppFrontBundle, AppAdminBundle, AppUserBundle]
+        directories: ["%kernel.root_dir%/../src"]
+
+jms_translation:
+    configs:
+        app:
+            dirs: ['%kernel.root_dir%', '%kernel.root_dir%/../src']
+            output_dir: '%kernel.root_dir%/Resources/translations'
+            ignored_domains: [routes]
+            excluded_names: ["*TestCase.php", "*Test.php"]
+            excluded_dirs: [cache, data, logs, vendor]
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
+
+ewz_recaptcha:
+    public_key:  6LfkRzkUAAAAAB8eRZTjSwdXQmzz0xpTQ-qQiXyI
+    private_key: 6LfkRzkUAAAAAIKeLsC5KT7jObDBH5FgchmbZrTs
+
+doctrine_cache:
+    aliases:
+        apc_cache: my_apc_cache
+
+    providers:
+        my_apc_cache:
+            type: apcu
+            namespace: my_apc_cache_ns
+            aliases:
+                - apc_cache
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: App\UserBundle\Entity\User
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
+
+
+ideasbucket_queue:
+    cache_handler: apc_cache
+    default: database
+    # Default config for command path you may need to change
+    # this if you are using Symfony 2.x directory structure.
+    #command_path: '%kernel.root_dir%/../bin/'
+    lock_path: ~
+    lock_service: ideasbucket_queue.filesystem_switch # Default value
+    connections:
+        database:
+            driver: database
+            queue: default
+            repository: app.repository.queue
+            retry_after: 90
+    #If you want to store failed jobs in database.
+    #failed_job_repository: FAILED_JOB_REPOSITORY

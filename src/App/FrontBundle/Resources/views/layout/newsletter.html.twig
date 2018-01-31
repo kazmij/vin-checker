@@ -1,0 +1,12 @@
+<div id="newsletterContainer">
+    <a data-alternative-text="{{ 'Show newsletter'|trans }}" class="btn visible-" id="showOrHideNewsletter" role="button" data-toggle="collapse" href="#newsletterCollapse"
+       aria-expanded="false" aria-controls="newsletterCollapse">
+        <i data-alternative-class="fa fa-angle-up" class="fa fa-angle-down" aria-hidden="true"></i> <span>{{ 'Hide newsletter'|trans }}</span>
+    </a>
+    <div class="collapse in" id="newsletterCollapse">
+        <div id="newsletter">
+            {{ 'Keep up to date - subscribe to the newsletter!'|trans }}
+            {{ render(controller('AppFrontBundle:Default:newsletter')) }}
+        </div>
+    </div>
+</div>

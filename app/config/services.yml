@@ -1,0 +1,39 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    twig.text_extension:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - name: twig.extension
+
+    twig.array_extension:
+        class: Twig_Extensions_Extension_Array
+        tags:
+            - name: twig.extension
+
+    twig.date_extension:
+        class: Twig_Extensions_Extension_Date
+        tags:
+            - name: twig.extension
+
+    twig.intl_extension:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - name: twig.extension
+
+    twig.i18n_extension:
+        class: Twig_Extensions_Extension_I18n
+        tags:
+            - name: twig.extension
+
+    app.repository.queue:
+        class: App\AdminBundle\Repository\QueueRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments: [App\AdminBundle\Entity\Queue]
+
+    app.job.cardjob:
+        class: App\AdminBundle\Job\CardJob
+        arguments: ["@service_container"]

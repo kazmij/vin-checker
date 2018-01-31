@@ -1,0 +1,25 @@
+settings_index:
+    path:     /
+    defaults: { _controller: "AppAdminBundle:Setting:index" }
+    methods:  GET
+
+settings_new:
+    path:     /new
+    defaults: { _controller: "AppAdminBundle:Setting:new" }
+    methods:  [GET, POST]
+
+settings_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppAdminBundle:Setting:edit" }
+    methods:  [GET, POST]
+
+settings_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppAdminBundle:Setting:delete" }
+    methods:  GET
+
+
+settings_status:
+    path:     /{id}/status
+    defaults: { _controller: "AppAdminBundle:Setting:status" }
+    methods:  GET

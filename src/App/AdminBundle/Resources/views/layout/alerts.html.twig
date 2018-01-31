@@ -1,0 +1,9 @@
+<div class="col-sm-12">
+    {% for label, messages in app.session.flashbag.all %}
+        {% for msg in messages %}
+            <div class="alert alert-{{ label }} text-center">
+                <strong>{{ msg|raw }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

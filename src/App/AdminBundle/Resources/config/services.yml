@@ -1,0 +1,120 @@
+services:
+    admin.menu_builder:
+        class: App\AdminBundle\Menu\Builder
+        arguments: ["@service_container"]
+
+    admin.main_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@admin.menu_builder", mainMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: adminMainMenu } # The alias is what is used to retrieve the menu
+
+    app.page_repository:
+        class: App\AdminBundle\Repository\PageRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Page]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.category_repository:
+        class: App\AdminBundle\Repository\CategoryRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Category]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.content_repository:
+        class: App\AdminBundle\Repository\ContentRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Content]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.content_translation_repository:
+        class: App\AdminBundle\Repository\ContentTranslationRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:ContentTranslation]
+
+    app.block_repository:
+        class: App\AdminBundle\Repository\BlockRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Block]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    # define service to send notifications
+    app.paginator:
+        class: App\AdminBundle\Service\Paginator
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    twig_app_extension:
+          class: App\AdminBundle\Twig\Extension\AppExtension
+          tags:
+              - {name: twig.extension}
+          arguments: ['@service_container']
+
+    app.setting_repository:
+        class: App\AdminBundle\Repository\SettingRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Setting]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.manufacturer_repository:
+        class: App\AdminBundle\Repository\ManufacturerRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Manufacturer]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.model_repository:
+        class: App\AdminBundle\Repository\ModelRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Model]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.model_trim_repository:
+        class: App\AdminBundle\Repository\ModelTrimRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:ModelTrim]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.car_repository:
+        class: App\AdminBundle\Repository\CarRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:Car]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.car_accident_repository:
+        class: App\AdminBundle\Repository\CarAccidentHistoryRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:CarAccidentHistory]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    app.car_photo_repository:
+        class: App\AdminBundle\Repository\CarPhotoRepository
+        factory: ["@doctrine", getRepository]
+        arguments: [AppAdminBundle:CarPhoto]
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    # define service to send notifications
+    app.helper:
+        class: App\AdminBundle\Service\Helper
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+    # define service to send notifications
+    app.mailer:
+        class: App\AdminBundle\Service\Mailer
+        calls:
+                - [ setContainer, ['@service_container'] ]
+
+
+

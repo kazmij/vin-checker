@@ -1,0 +1,83 @@
+app_user_agent_login:
+    path:     /agent/login
+    defaults: { _controller: AppFrontBundle:Agent/Security:login }
+    methods: [GET, POST]
+
+app_user_agent_login_check:
+    path:     /agent/login_check
+    defaults: { _controller: AppFrontBundle:Agent/Security:loginCheck }
+    methods: [POST]
+
+app_user_agent_logout:
+    path:     /agent/logout
+    defaults: { _controller: AppFrontBundle:Agent/Security:logout }
+    methods: [GET]
+
+app_user_agent_profile:
+    path:     /agent/profile
+    defaults: { _controller: AppFrontBundle:Agent/Profile:index }
+    methods: [GET, POST]
+
+app_user_agent_profile_edit:
+    path:     /agent/profile/edit
+    defaults: { _controller: AppFrontBundle:Agent/Profile:edit }
+    methods: [GET, POST]
+
+app_user_agent_cars:
+    path:     /agent/cars
+    defaults: { _controller: AppFrontBundle:Agent/Car:index }
+    methods: [GET, POST]
+
+app_user_agent_cars_add:
+    path:     /agent/cars/new
+    defaults: { _controller: AppFrontBundle:Agent/Car:new }
+    methods: [GET, POST]
+
+app_user_agent_cars_edit:
+    path:     /agent/cars/edit/{id}
+    defaults: { _controller: AppFrontBundle:Agent/Car:edit }
+    methods: [GET, POST]
+
+app_user_agent_cars_remove:
+    path:     /agent/cars/remove/{id}
+    defaults: { _controller: AppFrontBundle:Agent/Car:remove }
+    methods: [GET, POST]
+
+app_user_agent_cars_accident:
+    path:     /agent/cars/{id}/accidents
+    defaults: { _controller: AppFrontBundle:Agent/CarAccident:index }
+    methods: [GET, POST]
+
+app_user_agent_cars_accident_add:
+    path:     /agent/cars/{id}/accidents/new
+    defaults: { _controller: AppFrontBundle:Agent/CarAccident:new }
+    methods: [GET, POST]
+
+app_user_agent_cars_accident_edit:
+    path:     /agent/cars/accidents/edit/{id}
+    defaults: { _controller: AppFrontBundle:Agent/CarAccident:edit }
+    methods: [GET, POST]
+
+app_user_agent_cars_accident_remove:
+    path:     /agent/cars/accidents/remove/{id}
+    defaults: { _controller: AppFrontBundle:Agent/CarAccident:remove }
+    methods: [GET, POST]
+
+app_load_models:
+    path:     /cars/load-models
+    defaults: { _controller: AppFrontBundle:Agent/Car:loadModels }
+    methods: [GET, POST]
+
+app_load_trims:
+    path:     /cars/load-trims
+    defaults: { _controller: AppFrontBundle:Agent/Car:loadTrims }
+    methods: [GET, POST]
+
+app_front_page_flash:
+    path: '/flash-messages'
+    defaults: { _controller: AppFrontBundle:Default:flash }
+
+app_front_page:
+    path: '/{slug}'
+    defaults: { _controller: AppFrontBundle:Default:index, slug: '' }
+    requirements: { slug: '^(?!(pl|en)\/?$)([\w\-_])+$' }

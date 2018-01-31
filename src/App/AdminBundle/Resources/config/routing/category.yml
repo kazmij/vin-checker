@@ -1,0 +1,19 @@
+category_index:
+    path:     /{type}
+    defaults: { _controller: "AppAdminBundle:Category:index" }
+    methods:  GET
+
+category_new:
+    path:     /{type}/new
+    defaults: { _controller: "AppAdminBundle:Category:new" }
+    methods:  [GET, POST]
+
+category_edit:
+    path:     /{type}/{id}/edit
+    defaults: { _controller: "AppAdminBundle:Category:edit" }
+    methods:  [GET, POST]
+
+category_delete:
+    path:     /{type}/{id}/delete
+    defaults: { _controller: "AppAdminBundle:Category:delete" }
+    methods:  GET

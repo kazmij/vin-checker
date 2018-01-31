@@ -1,0 +1,35 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+{% block metaTitle %}{% spaceless %}
+    {% if page %}{% if page.translate.seoTitle is defined %}{{ page.translate.seoTitle }} : {% endif %}{{ parent() }}{% else %}{{ parent() }}{% endif %}
+{% endspaceless %}{% endblock %}
+
+{% block metaDescription %}{% spaceless %}
+    {% if page %}{% if page.translate.seoDescription is defined %}{{ page.translate.seoDescription }}, {% endif %}{% endif %}{{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block seoKeywords %}{% spaceless %}
+    {% if page %}{% if page.translate.seoKeywords is defined %}{{ page.translate.seoKeywords }}, {{ parent() }}{% endif %}{% endif %}{{ parent() }}
+{% endspaceless %}{% endblock %}
+
+
+{% block content %}
+
+    <section id="text-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header>
+                        <h1 class="em-font-type text-center"><strong>{{ page.translate.name }}</strong></h1>
+                    </header>
+                    {{ page.translate.description|raw }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

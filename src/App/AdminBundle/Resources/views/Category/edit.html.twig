@@ -1,0 +1,28 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+
+{% block content %}
+
+    <div class="col-md-12">
+        <div class="clearfix"></div>
+        {% include '@AppAdmin/Category/partials/buttonsEdit.html.twig' %}
+
+        <fieldset>
+            <legend>{{ 'Category edit'|trans }}</legend>
+        </fieldset>
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-primary btn-lg"><i
+                        class="fa fa-save"></i> {{ 'Save'|trans }}</button>
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+{% endblock %}
+
+
+
+
+
+

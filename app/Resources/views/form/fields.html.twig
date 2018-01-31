@@ -1,0 +1,476 @@
+{% extends 'bootstrap_3_layout.html.twig' %}
+
+{% block _app_adminbundle_event_images_entry_row %}
+    {{ form_widget(form.imagePath) }}
+{% endblock %}
+
+{% block _app_adminbundle_event_imagesToRemove_row %}
+    <div class="hidden imagesToRemoveContainer">
+        {{ form_widget(form) }}
+    </div>
+{% endblock %}
+
+{% block _app_adminbundle_event_eventsToAttributes_row %}
+    <div id="eventAttributes" class="panel panel-default">
+        <div class="panel-heading">{{ form_label(form) }}</div>
+        <div class="panel-body">
+            <a id="addNewAttribute" class="btn btn-sm btn-primary" href="#addNewAttribute"><i
+                        class="fa fa-plus"></i> {{ 'Add new attribute'|trans }}</a>
+            <ul class="list-group">
+                {{ form_widget(form) }}
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var getUsedValues = function () {
+                var usedValues = [];
+                $('#eventAttributes').find('li.list-group-item').each(function (i) {
+                    var select = $(this).find('select');
+                    if (select.val()) {
+                        usedValues.push(select.val());
+                    }
+                })
+
+                return usedValues;
+            };
+
+            var allValues = function () {
+                var allValues = [];
+                $('#eventAttributes').find('li.list-group-item:first select option').each(function () {
+                    if ($(this).attr('value')) {
+                        allValues.push($(this).attr('value'));
+                    }
+                })
+
+                return allValues;
+            }();
+
+            var resolveUsedValues = function () {
+                var usedValues = getUsedValues();
+                $('#eventAttributes').find('select').each(function () {
+                    var selectValue = $(this).val();
+                    $(this).find('option').each(function () {
+                        if ($(this).attr('value') != selectValue && $.inArray($(this).attr('value'), usedValues) > -1) {
+                            $(this).attr('disabled', true);
+                        } else {
+                            $(this).removeAttr('disabled');
+                        }
+                    });
+                });
+            };
+
+            $('#eventAttributes').find('li.list-group-item').each(function (i) {
+                if (i > 0) {
+                    $(this).append('<a class="removeAttribute" href="#removeAttribute"><i class="fa fa-times"></i> {{ 'Remove'|trans }}</a>');
+                }
+            });
+
+            var usedValues = getUsedValues();
+            if (usedValues.length == allValues.length) {
+                $('#addNewAttribute').hide();
+            }
+
+            $('body').on('click', '#addNewAttribute', function (e) {
+                e.preventDefault();
+                var usedValues = getUsedValues();
+                var item = $('#app_adminbundle_event_eventsToAttributes').attr('data-prototype');
+                var itemNumber = $('#eventAttributes').find('li.list-group-item').length;
+                item = item.replace(/__name__/ig, itemNumber);
+
+                $('#eventAttributes').find('li.list-group-item:last').after(item);
+                $('#eventAttributes').find('li.list-group-item:last').append('<a class="removeAttribute" href="#removeAttribute"><i class="fa fa-times"></i> {{ 'Remove'|trans }}</a>')
+
+                if (usedValues.length) {
+                    $('#eventAttributes').find('li.list-group-item:last select option').each(function (i) {
+                        if ($.inArray($(this).attr('value'), usedValues) > -1) {
+                            $(this).attr('disabled', true);
+                        } else {
+                            $(this).removeAttr('disabled');
+                        }
+                    });
+                }
+
+                usedValues = getUsedValues();
+                if (usedValues.length == allValues.length || allValues.length == $('#eventAttributes').find('li.list-group-item').length) {
+                    $('#addNewAttribute').hide();
+                }
+
+                return false;
+            });
+
+
+            $('body').on('change', '#eventAttributes select', function () {
+                usedValues = getUsedValues();
+                if (usedValues.length == allValues.length || allValues.length == $('#eventAttributes').find('li.list-group-item').length) {
+                    $('#addNewAttribute').hide();
+                }
+
+                setTimeout(function () {
+                    resolveUsedValues();
+                }, 10);
+
+                return true;
+            });
+
+            $('body').on('click', 'a.removeAttribute', function (e) {
+                e.preventDefault();
+                $(this).parents('li:eq(0)').remove();
+                normalizeEventsRows();
+                $('#addNewAttribute').show();
+                return false;
+            });
+
+            var normalizeEventsRows = function () {
+                $('#eventAttributes').find('li.list-group-item').each(function (i) {
+                    var id = $(this).attr('data-id');
+                    var handler = $(this);
+                    var html = handler[0].outerHTML;
+                    var reg1 = new RegExp('\_' + id + '\_', 'gm'), reg2 = new RegExp('\_' + id, 'gm'), reg3 = new RegExp('\\[' + id + '\\]', 'gm'), reg4 = new RegExp('data\-id\=\"\d+\"', 'gm');
+                    html = html.replace(reg1, '_' + i + '_');
+                    html = html.replace(reg2, '_' + i);
+                    html = html.replace(reg3, '[' + i + ']');
+                    html = html.replace(reg4, 'data-id="' + id + '"');
+                    var values = function () {
+                        var data = [];
+                        handler.find('input, select').each(function (i) {
+                            data.push($(this).val());
+                        })
+
+                        return data;
+                    }();
+                    handler[0].outerHTML = html;
+                    $('#eventAttributes').find('li.list-group-item').eq(i).find('input, select').each(function (i) {
+                        $(this).val(values[i]);
+                    })
+
+                });
+            }
+        });
+
+    </script>
+{% endblock %}
+
+{% block _app_adminbundle_event_eventsToAttributes_entry_row %}
+    <li data-id="{{ form.vars.name }}" class="list-group-item">
+        {{ form_widget(form) }}
+    </li>
+{% endblock %}
+
+{% block _app_adminbundle_event_eventsSchedule_entry_row %}
+    <li data-id="{{ form.vars.name }}" class="list-group-item">
+        {{ form_widget(form) }}
+    </li>
+{% endblock %}
+
+{% block _app_adminbundle_event_eventsSchedule_row %}
+    <div id="eventSchedule" class="panel panel-default">
+        <div class="panel-heading">{{ form_label(form) }}</div>
+        <div class="panel-body">
+            <a id="addNewScheduleItem" class="btn btn-sm btn-primary" href="#addNewScheduleItem"><i
+                        class="fa fa-plus"></i> {{ 'Add new schedule item'|trans }}</a>
+            <ul class="list-group">
+                {{ form_widget(form) }}
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            $('#eventSchedule').find('li.list-group-item').each(function (i) {
+                if (i > 0) {
+                    $(this).append('<a class="removeSchedule" href="#removeSchedule"><i class="fa fa-times"></i> {{ 'Remove'|trans }}</a>');
+                }
+            });
+
+            $('body').on('click', '#addNewScheduleItem', function (e) {
+                e.preventDefault();
+                var item = $('#app_adminbundle_event_eventsSchedule').attr('data-prototype');
+                var itemNumber = $('#eventSchedule').find('li.list-group-item').length;
+                item = item.replace(/__name__/ig, itemNumber);
+
+                $('#eventSchedule').find('li.list-group-item:last').after(item);
+                $('#eventSchedule').find('li.list-group-item:last').append('<a class="removeSchedule" href="#removeSchedule"><i class="fa fa-times"></i> {{ 'Remove'|trans }}</a>')
+                datetimepickerTime();
+
+                return false;
+            });
+
+            $('body').on('click', 'a.removeSchedule', function (e) {
+                e.preventDefault();
+                $(this).parents('li:eq(0)').remove();
+                normalizeEventsScheduleRows();
+                return false;
+            });
+
+            var normalizeEventsScheduleRows = function () {
+                $('#eventSchedule').find('li.list-group-item').each(function (i) {
+                    var id = $(this).attr('data-id');
+                    var handler = $(this);
+                    var html = handler[0].outerHTML;
+                    var reg1 = new RegExp('\_' + id + '\_', 'gm'), reg2 = new RegExp('\_' + id, 'gm'), reg3 = new RegExp('\\[' + id + '\\]', 'gm'), reg4 = new RegExp('data\-id\=\"\d+\"', 'gm');
+                    html = html.replace(reg1, '_' + i + '_');
+                    html = html.replace(reg2, '_' + i);
+                    html = html.replace(reg3, '[' + i + ']');
+                    html = html.replace(reg4, 'data-id="' + id + '"');
+                    var values = function () {
+                        var data = [];
+                        handler.find('input, select').each(function (i) {
+                            data.push($(this).val());
+                        })
+
+                        return data;
+                    }();
+                    handler[0].outerHTML = html;
+                    $('#eventSchedule').find('li.list-group-item').eq(i).find('input, select').each(function (i) {
+                        $(this).val(values[i]);
+                    })
+
+                    datetimepickerTime();
+                });
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block _app_adminbundle_event_eventsSchedule_entry_startDate_widget %}
+    <div class='input-group date datetimepicker_time'>
+        {{ form_widget(form) }}
+        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+    </div>
+{% endblock %}
+
+{% block elfinder_widget %}
+    {% if multiple %}
+        {% set m = form.parent.vars.name matches '/^\\d+$/' %}
+        {% if (m and form.parent.vars.name == "0") or not m %}
+            <input data-form-hide-fix data-enable="{{ enable }}" data-instance="{{ instance }}"
+                   data-homefolder="{{ homeFolder }}"
+                   data-id="{{ form.parent.vars.value ? form.parent.vars.value.id : '' }}"
+                   type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}
+                   data-type="elfinder-input-field"/>
+            <button data-href="{{ path('elfinder', {'instance': instance, 'homeFolder': homeFolder }) }}?id={{ id }}&multiple={{ multiple ? 1 : 0 }}"
+                    id="{{ id }}_button" type="button"
+                    class="btn btn-primary btn-block buttonElfinderOpen"><i
+                        class="fa fa-plus"></i> {{ 'Upload/Select image' }}</button>
+            {% if form.vars.value %}
+
+            {% endif %}
+            {% if enable and instance is defined %}
+                <script type="text/javascript" charset="utf-8">
+                    document.addEventListener("DOMContentLoaded", function (event) {
+                        $('.buttonElfinderOpen').on('click', function (e) {
+                            e.preventDefault();
+                            var input = $(this).parents('.form-group:eq(0)').find('input').first();
+                            var childWin = window.open($(this).attr('data-href'), "popupWindow", "height=450, width=900");
+                        });
+                    });
+                </script>
+            {% endif %}
+        {% else %}
+            <input data-form-hide-fix data-enable="{{ enable }}" data-instance="{{ instance }}"
+                   data-homefolder="{{ homeFolder }}"
+                   data-id="{{ form.parent.vars.value ? form.parent.vars.value.id : '' }}"
+                   type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}
+                   data-type="elfinder-input-field"/>
+        {% endif %}
+        {% if form.vars.value is not empty %}
+            <div class="elfinderImagesThumb">
+                <a title="Remove" class="elfinderImagesRemove" href="#removeImage"><i class="fa fa-2x fa-times"></i></a>
+                <a class="fancybox" href="{{ form.vars.value | imagine_filter('1024x768') }}">
+                    <img data-input-id="{{ id }}" src="{{ form.vars.value | imagine_filter('thumb') }}"
+                         style="max-height: 90px;"
+                         class="img-thumbnail"/>
+                </a>
+            </div>
+        {% endif %}
+    {% else %}
+        <input data-form-hide-fix data-enable="{{ enable }}" data-instance="{{ instance }}"
+               data-homefolder="{{ homeFolder }}"
+               data-id="{{ form.parent.vars.value ? form.parent.vars.value.id : '' }}"
+               type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}
+               data-type="elfinder-input-field"/>
+        <button data-href="{{ path('elfinder', {'instance': instance, 'homeFolder': homeFolder }) }}?id={{ id }}&multiple={{ multiple ? 1 : 0 }}"
+                id="{{ id }}_button" type="button"
+                class="btn btn-primary btn-block buttonElfinderOpen"><i
+                    class="fa fa-plus"></i> {{ 'Upload/Select image' }}</button>
+        {% if form.vars.value is not empty %}
+            <div class="elfinderImagesThumb">
+                <a class="fancybox" href="{{ form.vars.value | imagine_filter('1024x768') }}">
+                    <img data-input-id="{{ id }}" src="{{ form.vars.value | imagine_filter('thumb') }}"
+                         style="max-height: 90px;"
+                         class="img-thumbnail"/></a>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block tree_widget %}
+    <div class="treeContainer relative">
+        {% set errors = form_errors(form) %}
+        <div style="position: absolute; bottom: 0; left: 0; opacity: 0; width: 0; height: 0;">
+            {{ block('choice_widget') }}
+        </div>
+
+        <div class="jsonTree text-left"></div>
+
+        {{ errors|raw }}
+
+        {% stylesheets filter='cssrewrite'
+        'bower_components/jstree/dist/themes/default/style.min.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+
+        {% set jsTreeScript %}
+            {% javascripts
+            'bower_components/jstree/dist/jstree.min.js' %}
+            {{ asset_url }}
+            {% endjavascripts %}
+        {% endset %}
+
+        <script>
+            var addedScript = false;
+            var treeListener = function () {
+                {% if tree_data is not empty %}
+                var waitingForJquery = null;
+                waitingForJquery = setInterval(function () {
+                    if (typeof jQuery !== 'undefined') {
+                        if (typeof $.jstree !== 'undefined') {
+                            clearInterval(waitingForJquery);
+                            waitingForJquery = null;
+                            showJsTree();
+                        } else if (!addedScript) {
+                            var script = document.createElement('script');
+                            script.src = '{{ asset(jsTreeScript|trim) }}';
+                            document.getElementsByTagName('head')[0].appendChild(script);
+                            addedScript = true;
+                        }
+                    }
+                }, 100);
+                var showJsTree = function () {
+                    var jstree = $('.jsonTree').jstree({
+                        'core': {
+                            'data': {{ tree_data|json_encode|raw }},
+                            "themes": {
+                                "variant": "large"
+                            }
+                        }
+                    })
+
+                    jstree.on('select_node.jstree', function (e, data) {
+                        var id = data.node.id,
+                                select = $(e.currentTarget).parents('.treeContainer:eq(0)').find('select');
+                        select.find('option:selected').prop('selected', false);
+                        select.find('option[value=' + id + ']').prop('selected', true);
+                    }).on('loaded.jstree', function (e, data) {
+                        $('.jsonTree').jstree('open_all');
+                        window.removeEventListener('load', treeListener);
+                    })
+                };
+                {% endif %}
+            };
+            window.addEventListener('load', treeListener);
+        </script>
+    </div>
+
+{% endblock %}
+
+{% block _app_car_photos_row %}
+    <div id="carPhotos" class="panel panel-warning">
+        <div class="panel-heading">{{ form_label(form) }}</div>
+        <div class="panel-body">
+            <a id="addNewPhoto" class="btn btn-sm btn-primary" href="#addNewPhoto"><i
+                        class="fa fa-plus"></i> Nowe zdjecie</a>
+            <ul class="list-group">
+                {{ form_widget(form) }}
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            $('#carPhotos').find('li.list-group-item').each(function (i) {
+                $(this).append('<a class="removePhoto" href="#removePhoto"><i class="fa fa-times"></i> Usun</a>');
+            });
+
+            $('body').on('click', '#addNewPhoto', function (e) {
+                e.preventDefault();
+                var item = $('#app_car_photos').attr('data-prototype');
+                var itemNumber = $('#carPhotos').find('li.list-group-item').length;
+                if (itemNumber) {
+                    item = item.replace(/__name__/ig, itemNumber);
+                } else {
+                    item = item.replace(/__name__/ig, 0);
+                }
+
+                $('#carPhotos').find('ul.list-group').append(item);
+                $('#carPhotos').find('ul.list-group > li:last').append('<a class="removePhoto" href="#removePhoto"><i class="fa fa-times"></i> Usun</a>')
+
+                return false;
+            });
+
+            $('body').on('click', 'a.removePhoto', function (e) {
+                e.preventDefault();
+
+                if ($(this).parents('li:eq(0)').attr('data-photo-id')) {
+                    var data = $('#app_car_photosToRemove').val() ? $('#app_car_photosToRemove').val().split(',') : [];
+                    data.push($(this).parents('li:eq(0)').attr('data-photo-id'));
+                    if (data.length > 1) {
+                        $('#app_car_photosToRemove').val(data.join(','));
+                    } else {
+                        $('#app_car_photosToRemove').val(data[0]);
+                    }
+                }
+
+                $(this).parents('li:eq(0)').remove();
+                normalizePhotosRows();
+                return false;
+            });
+
+            var normalizePhotosRows = function () {
+                $('#carPhotos').find('li.list-group-item').each(function (i) {
+                    var id = $(this).attr('data-id');
+                    var handler = $(this);
+                    var html = handler[0].outerHTML;
+                    var reg1 = new RegExp('\_' + id + '\_', 'gm'), reg2 = new RegExp('\_' + id, 'gm'), reg3 = new RegExp('\\[' + id + '\\]', 'gm'), reg4 = new RegExp('data\-id\=\"\d+\"', 'gm');
+                    html = html.replace(reg1, '_' + i + '_');
+                    html = html.replace(reg2, '_' + i);
+                    html = html.replace(reg3, '[' + i + ']');
+                    html = html.replace(reg4, 'data-id="' + id + '"');
+                    var values = function () {
+                        var data = [];
+                        handler.find('input, select').each(function (i) {
+                            data.push($(this).val());
+                        })
+
+                        return data;
+                    }();
+                    handler[0].outerHTML = html;
+                    $('#carPhotos').find('li.list-group-item').eq(i).find('input, select').each(function (i) {
+                        $(this).val(values[i]);
+                    })
+                });
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block _app_car_photos_entry_row %}
+    <li data-photo-id="{{ form.vars.value ? form.vars.value.id : '' }}" data-id="{{ form.vars.name }}"
+        class="list-group-item">
+        {% if form.vars and form.vars.value and form.vars.value.path %}
+            <img src="{{ ('/uploads/' ~ form.vars.value.path)|imagine_filter('240x235') }}"/>
+        {% endif %}
+        {{ form_widget(form) }}
+    </li>
+{% endblock %}
+
+{% block _app_car_mileagesHistory_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block _app_car_mileagesHistory_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}

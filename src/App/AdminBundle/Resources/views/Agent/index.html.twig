@@ -1,0 +1,132 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css'
+    'bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <div class="clearfix"></div>
+        {% include '@AppAdmin/Agent/partials/buttons.html.twig' %}
+
+
+        <fieldset>
+            <legend><i class="fa fa-user" aria-hidden="true"></i> Agenci</legend>
+        </fieldset>
+
+        <form class="form-inline" method="get">
+            <div class="form-group">
+                <input pattern=".{3,}" title="3 characters minimum" value="{{ app.request.get('query') }}" type="text"
+                       class="form-control" name="query" id="query"
+                       placeholder="{{ 'What are you looking for?'|trans }}">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> {{ 'Search'|trans }}</button>
+        </form>
+
+
+        {% if pagination|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-striped table-condensed">
+                    <thead>
+                    <tr>
+                        <th>{{ knp_pagination_sortable(pagination, 'Nazwa', 'u.name') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Email', 'u.email') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Active'|trans, 'u.enabled') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Created at'|trans, 'u.createdAt') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Updated at'|trans, 'u.updatedAt') }}</th>
+                        <th>{{ 'Actions'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for record in pagination %}
+                        <tr>
+                            <td>
+                                <a href="{{ path('agents_edit', { 'id': record.id }) }}">{{ record.username }}<br/>
+                                {{ record.firstname ~ ' ' ~ record.lastname }}
+                                </a>
+                            </td>
+                            <td>
+                                {{ record.email }}
+                            </td>
+                            <td>
+                                <input id="status{{ record.id }}" {{ record.enabled ? 'checked' : '' }}
+                                       type="checkbox"
+                                       class="switcher hidden" value="1"
+                                       data-url="{{ path('agents_status', {id: record.id}) }}"/>
+                            </td>
+                            <td>{{ record.createdAt|date('Y-m-d H:i') }}</td>
+                            <td>{{ record.updatedAt|date('Y-m-d H:i') }}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="">
+                                    <a title="Edycja agenta"
+                                       href="{{ path('agents_edit', {id: record.id}) }}"
+                                       class="btn btn-sm btn-primary"><i
+                                                class="fa fa-pencil-square-o"></i> {{ 'Edit'|trans }}</a>
+                                    <a title="Usuwanie agenta"
+                                       href="{{ path('agents_delete', {id: record.id}) }}"
+                                       class="btn btn-sm btn-danger confirmAction"><i
+                                                class="fa fa-trash"></i> Usun</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p class="text-danger text-left">{{ 'The list is empty'|trans }}</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    'bower_components/moment/moment.js'
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+    'bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js'
+    'templates/js/jquery.lazyload.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        datetimepickerRange();
+
+        $(function () {
+
+            $("img.lazy").lazyload({
+
+            });
+
+            $('input.switcher').bootstrapSwitch({
+                onSwitchChange: function (e) {
+                    var handler = $(e.target);
+                    $.ajax({
+                        type: 'get',
+                        url: handler.attr('data-url'),
+                        data: {},
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        success: function (json) {
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+{% endblock %}

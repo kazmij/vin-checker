@@ -1,0 +1,27 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+{% block metaTitle %}{% spaceless %}
+    Profile agenta - {{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-2 col-sm-12">
+        {% include '@AppFront/Agent/Profile/partials/nav.html.twig' %}
+    </div>
+    <div class="col-md-10 col-sm-12">
+        <h1 class="text-center pageHeader">Moj profil</h1>
+        <div class="panel panel-success">
+            <div class="panel-heading">Edycja danych</div>
+            <div class="panel-body">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <div class="form-group">
+                    <br/>
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg"><i
+                                class="fa fa-save"></i> {{ 'Save'|trans }}</button>
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

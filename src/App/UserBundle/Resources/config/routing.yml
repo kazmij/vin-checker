@@ -1,0 +1,14 @@
+app_user_admin_login:
+    path:     /admin/login
+    defaults: { _controller: AppUserBundle:Security:login }
+    methods: [GET, POST]
+
+app_user_admin_login_check:
+    path:     /admin/login_check
+    defaults: { _controller: AppUserBundle:Security:loginCheck }
+    methods: [POST]
+
+app_user_admin_logout:
+    path:     /admin/logout
+    defaults: { _controller: AppUserBundle:Security:logout }
+    methods: [GET]

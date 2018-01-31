@@ -1,0 +1,69 @@
+{% extends '@AppFront/layout.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block metaTitle %}{% spaceless %}
+    Historia pojazdu - {{ parent() }}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-2 col-sm-12">
+        {% include '@AppFront/Agent/Profile/partials/nav.html.twig' %}
+    </div>
+    <div class="col-md-10 col-sm-12">
+        <h1 class="text-center pageHeader">Edycja zdarzenia pojazdu #{{ car.id }}
+            ({{ car.manufacturer.name ~ ' -> ' ~ car.model.name ~ (car.modelTrim ? (' -> ' ~ car.modelTrim.name)) ~ ' ' ~  car.yearOfManufacture }}
+            r.)</h1>
+        {% include '@AppFront/Agent/CarAccident/partials/buttonsEdit.html.twig' %}
+        <div class="panel panel-success">
+            <div class="panel-heading">Dane szkody</div>
+            <div class="panel-body">
+                {{ form_start(form) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.place) }}
+                {{ form_row(form.photosToRemove) }}
+                <div class="form-group">
+                    {{ form_label(form.accidentDate) }}
+                    <div class="clearfix"></div>
+                    <div class='input-group date datetimepicker col-sm-4 pull-left'>
+                        {{ form_widget(form.accidentDate) }}
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                {{ form_rest(form) }}
+                <div class="form-group">
+                    <br/>
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg"><i
+                                class="fa fa-save"></i> {{ 'Save'|trans }}</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% include '@AppFront/Agent/Car/partials/formActions.html.twig' %}
+
+    {% javascripts
+    'bower_components/moment/moment.js'
+    'bower_components/moment/locale/pl.js'
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        datetimepickerDate();
+    </script>
+{% endblock %}

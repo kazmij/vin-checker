@@ -1,0 +1,28 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <div class="clearfix"></div>
+        {% include '@AppAdmin/Banner/partials/buttonsNew.html.twig' %}
+
+        <fieldset>
+            <legend>{{ 'Banner creation'|trans }}</legend>
+        </fieldset>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="form-group">
+            <br/>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg"><i
+                        class="fa fa-save"></i> {{ 'Save'|trans }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

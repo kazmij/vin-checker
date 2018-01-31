@@ -1,0 +1,67 @@
+<script>
+    $(function () {
+        $('#app_car_manufacturerData').on('change', function (e) {
+            $('#app_car_modelData').prop('disabled', true);
+            $('#app_car_trimData').prop('disabled', true);
+            var handler = $(this);
+            if ($(this).val()) {
+                $.ajax({
+                    type: 'get',
+                    url: '{{ path('app_load_models') }}',
+                    data: {
+                        manufacturer: handler.val()
+                    },
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    success: function (json) {
+                        if (json.success) {
+                            $('#app_car_modelData').html('');
+                            if (json.models) {
+                                for (key in json.models) {
+                                    $('#app_car_modelData').append('<option value="' + json.models[key] + '">' + key + '</option>');
+                                }
+                            }
+                            $('#app_car_modelData').prop('disabled', $('#app_car_modelData option').length == 0);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                    }
+                })
+            }
+
+            return true;
+        });
+
+        $('#app_car_modelData').on('change', function (e) {
+            var handler = $(this);
+            if ($(this).val()) {
+                $.ajax({
+                    type: 'get',
+                    url: '{{ path('app_load_trims') }}',
+                    data: {
+                        model: handler.val()
+                    },
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    success: function (json) {
+                        if (json.success) {
+                            $('#app_car_trimData').html('');
+                            if (json.trims) {
+                                for (key in json.trims) {
+                                    $('#app_car_trimData').append('<option value="' + json.trims[key] + '">' + key + '</option>');
+                                }
+                            }
+                            $('#app_car_trimData').prop('disabled', false);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                    }
+                })
+            }
+
+            return true;
+        });
+    });
+</script>

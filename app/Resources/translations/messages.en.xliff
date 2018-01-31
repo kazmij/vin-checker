@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-07-24T08:23:05Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="da39a3ee5e6b4b0d3255bfef95601890afd80709" resname="">
+        <source></source>
+        <target></target>
+        <jms:reference-file line="75">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="84">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec2b975fd621771c30d32d0a4773edfaea9362ce" resname="- Choose an attribute -">
+        <source>- Choose an attribute -</source>
+        <target>- Choose an attribute -</target>
+        <jms:reference-file line="35">/../src/App/AdminBundle/Form/EventToAttributeType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de22850eb1e3e4878727c205bb9990117f961161" resname="About Arena">
+        <source>About Arena</source>
+        <target>About Arena</target>
+        <jms:reference-file line="1234">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="453">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="333575f1b665bd269243f051225e24a6225fd579" resname="About Atlas Arena">
+        <source>About Atlas Arena</source>
+        <target>About Atlas Arena</target>
+        <jms:reference-file line="471">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c3cd636a585b20c40ac2df5ffb403e83cb2eef51" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+        <jms:reference-file line="66">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="91">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="79">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="77">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a733b809d2f1233496ab516eed0f3ef75cf3791a" resname="Active">
+        <source>Active</source>
+        <target>Active</target>
+        <jms:reference-file line="63">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="88">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="38">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="76">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="74">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c6b2b26e21b9615365e63788354660b6bdc98179" resname="Active?">
+        <source>Active?</source>
+        <target state="new">Active?</target>
+        <jms:reference-file line="47">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="61">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="58">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="58">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0d0ba7438fc31042f6ab082d20d598b81ed05fe" resname="Add block">
+        <source>Add block</source>
+        <target>Add block</target>
+        <jms:reference-file line="66">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8986334a31cf95145fe75d4e6213183110f3f6f2" resname="Add new attribute">
+        <source>Add new attribute</source>
+        <target state="new">Add new attribute</target>
+        <jms:reference-file line="18">/Resources/views/form/fields.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="79c915c0958595b6fef0355e06f3311f0cd1695f" resname="Add new event">
+        <source>Add new event</source>
+        <target>Add new event</target>
+        <jms:reference-file line="42">/../src/App/AdminBundle/Resources/views/Event/calendar.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="461809c0fd45a2b801a81907addb60544be9e571" resname="Add new schedule item">
+        <source>Add new schedule item</source>
+        <target state="new">Add new schedule item</target>
+        <jms:reference-file line="171">/Resources/views/form/fields.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="390eb2cf2129c969ca722b717b191cb0e0536ff7" resname="Add news">
+        <source>Add news</source>
+        <target>Add news</target>
+        <jms:reference-file line="86">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="03d2d33aec3e9c02e47583ebc6762dcc4803196e" resname="Add page">
+        <source>Add page</source>
+        <target>Add page</target>
+        <jms:reference-file line="46">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="911a0b354b810ade1b41221cd419095a4767144e" resname="Additional information">
+        <source>Additional information</source>
+        <target state="new">Additional information</target>
+        <jms:reference-file line="1586">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="060be00f4f266242360002d88dfca23a03981b39" resname="All categories">
+        <source>All categories</source>
+        <target>All categories</target>
+        <jms:reference-file line="25">/../src/App/FrontBundle/Resources/views/Events/calendar.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/App/FrontBundle/Resources/views/Events/index.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+        <jms:reference-file line="70">/../src/App/FrontBundle/Resources/views/layout/header.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74c53bd71d4379e471dffbaca51e870a8f1ae5e8" resname="All objects">
+        <source>All objects</source>
+        <target state="new">All objects</target>
+        <jms:reference-file line="21">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/FrontBundle/Resources/views/Events/calendar.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+        <jms:reference-file line="19">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="31">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68f22e0d8e22294b22cbf60bf848489f6aa4d02c" resname="All portals">
+        <source>All portals</source>
+        <target state="new">All portals</target>
+        <jms:reference-file line="52">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0393902db1f516ef5f95f6830938558a88fb23c" resname="April">
+        <source>April</source>
+        <target state="new">April</target>
+        <jms:reference-file line="79">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8bb8ab438070bc5fe3156e22cec2369372df782" resname="Ask us a question">
+        <source>Ask us a question</source>
+        <target state="new">Ask us a question</target>
+        <jms:reference-file line="33">/../src/App/FrontBundle/Resources/views/Page/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9a5e484f9c0ad780230bc955a2bc6d61bc92b3af" resname="Atlas Arena 3D">
+        <source>Atlas Arena 3D</source>
+        <target>Atlas Arena 3D</target>
+        <jms:reference-file line="1268">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="487">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a086d942884a301b827479029ba19c2746237425" resname="Attribute">
+        <source>Attribute</source>
+        <target state="new">Attribute</target>
+        <jms:reference-file line="31">/../src/App/AdminBundle/Form/EventToAttributeType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="596fe11c2cfdb7a6b78bce54ed51f0ff6c1bd7e8" resname="Attribute class">
+        <source>Attribute class</source>
+        <target state="new">Attribute class</target>
+        <jms:reference-file line="40">/../src/App/AdminBundle/Form/EventAttributeType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b27330002c111e2f78a9a5fe4c7ec08e22ef421" resname="Attribute type">
+        <source>Attribute type</source>
+        <target state="new">Attribute type</target>
+        <jms:reference-file line="44">/../src/App/AdminBundle/Form/EventAttributeType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54ec1988b6276d9d4fb084f80d52a471b49affb7" resname="Attribute value">
+        <source>Attribute value</source>
+        <target state="new">Attribute value</target>
+        <jms:reference-file line="48">/../src/App/AdminBundle/Form/EventToAttributeType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69d97c5797dc7d211aaa4e9229db5c8466d4edef" resname="August">
+        <source>August</source>
+        <target state="new">August</target>
+        <jms:reference-file line="83">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b52b36b7269fbfc58ec24bb724691951a3decbe8" resname="Back">
+        <source>Back</source>
+        <target>Back</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Block/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Block/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Category/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Category/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Event/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Event/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/EventAttribute/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/EventAttribute/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/News/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/News/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Page/partials/buttonsEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Page/partials/buttonsNew.html.twig</jms:reference-file>
+        <jms:reference-file line="43">/../src/App/FrontBundle/Resources/views/Events/item.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/App/FrontBundle/Resources/views/News/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07fc58c982f60938cb3b36d8312e73af7ed343b2" resname="Block creation">
+        <source>Block creation</source>
+        <target>Block creation</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/Block/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5150b30f39b24e9548f5e36f26041c7e54e18016" resname="Block edit">
+        <source>Block edit</source>
+        <target>Block edit</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/Block/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54c45c033f5eb914fae27a646cbd9e23d3750d19" resname="Blocks">
+        <source>Blocks</source>
+        <target>Blocks</target>
+        <jms:reference-file line="51">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="abef32dec5dd0e7546cd83e0a86cc523d9d474d9" resname="Blocks list">
+        <source>Blocks list</source>
+        <target>Blocks list</target>
+        <jms:reference-file line="62">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="718a7e8a582e982e452dd5700addba4ffc1cf40d" resname="Body">
+        <source>Body</source>
+        <target state="new">Body</target>
+        <jms:reference-file line="6">/../src/App/FrontBundle/Resources/views/Emails/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f763c7965aaa0b05af3efe7b1700829275962e35" resname="Buisness zone">
+        <source>Buisness zone</source>
+        <target>Buisness zone</target>
+        <jms:reference-file line="1202">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1423">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="197">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="599">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="916">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="adab5090ac6a1b7b5420faac7be86c41721ba27c" resname="Calendar">
+        <source>Calendar</source>
+        <target>Calendar</target>
+        <jms:reference-file line="120">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0cdcd3ec9d6100d5b2bf2c1b22181845b2705f70" resname="Categories list">
+        <source>Categories list</source>
+        <target>Categories list</target>
+        <jms:reference-file line="18">/../src/App/AdminBundle/Resources/views/Category/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a3c686e711e4720f99b4562bb3dbaae7ab658cf2" resname="Category">
+        <source>Category</source>
+        <target>Category</target>
+        <jms:reference-file line="73">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="82">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="85">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="74">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8156aeaa96d3ea0a16a69eeccfc77080f8b4fe67" resname="Category creation">
+        <source>Category creation</source>
+        <target>Category creation</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/Category/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c08f40fab54191e3915dc5f98003a0b73fc8d9b" resname="Category edit">
+        <source>Category edit</source>
+        <target>Category edit</target>
+        <jms:reference-file line="11">/../src/App/AdminBundle/Resources/views/Category/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbfa773e5a63a5ea58c9b6207e608ca0120e592a" resname="Close">
+        <source>Close</source>
+        <target>Close</target>
+        <jms:reference-file line="33">/../src/App/AdminBundle/Resources/views/Event/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="148b74b622b406de6bd5dd7126282e6b08b0b693" resname="Conference rooms">
+        <source>Conference rooms</source>
+        <target>Conference rooms</target>
+        <jms:reference-file line="1294">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="212">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="614">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="931">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="726a1ceebd2e32d2524d492e882bb6cd64700879" resname="Contact email">
+        <source>Contact email</source>
+        <target state="new">Contact email</target>
+        <jms:reference-file line="102">/../src/App/FrontBundle/Controller/DefaultController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fe3b011cbc123b92e7a71d90800459982babd9a" resname="Content not found!">
+        <source>Content not found!</source>
+        <target>Content not found!</target>
+        <jms:reference-file line="66">/../src/App/FrontBundle/Controller/DefaultController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="987b67526cf950eee4f1daededbc2d49c91e6b4c" resname="Create block">
+        <source>Create block</source>
+        <target>Create block</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Block/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61495a810407a98b9a682d46be4f974f0e8c4f15" resname="Create category">
+        <source>Create category</source>
+        <target>Create category</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Category/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b8d8b9a919706adf04012ceb4de659811efac2f7" resname="Create event">
+        <source>Create event</source>
+        <target>Create event</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Event/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cbb2df223660ee1b128850c1a0ce8f7f62453c7a" resname="Create event attribute">
+        <source>Create event attribute</source>
+        <target state="new">Create event attribute</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/EventAttribute/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da76d8571f0a9c1bd1bfe3b0f2508e1ab141960a" resname="Create news">
+        <source>Create news</source>
+        <target>Create news</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/News/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9261a3c76b66ba3e89f5b269a4a3fed449258074" resname="Create page">
+        <source>Create page</source>
+        <target>Create page</target>
+        <jms:reference-file line="6">/../src/App/AdminBundle/Resources/views/Page/partials/buttons.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1c69716be47f3a1cb7d0bfc922d70909efbe2b6" resname="Created at">
+        <source>Created at</source>
+        <target>Created at</target>
+        <jms:reference-file line="64">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="89">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="77">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb9a4bc1c0c153e4e4b042a79113b815b7e3021d" resname="Date">
+        <source>Date</source>
+        <target state="new">Date</target>
+        <jms:reference-file line="63">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="65640c6577c9c72497525e656127b5bd1deb6f85" resname="December">
+        <source>December</source>
+        <target state="new">December</target>
+        <jms:reference-file line="87">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="03e7d0689403d176fa60aa7e1d28d4fc46e63a81" resname="Delete attribute">
+        <source>Delete attribute</source>
+        <target state="new">Delete attribute</target>
+        <jms:reference-file line="57">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fa55fdfefafe0f644ba887d43bc026dac294ad25" resname="Delete block">
+        <source>Delete block</source>
+        <target>Delete block</target>
+        <jms:reference-file line="81">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="260b69625056e26e4029491cf672306054bf10a6" resname="Delete page">
+        <source>Delete page</source>
+        <target>Delete page</target>
+        <jms:reference-file line="119">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="104">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="101">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+        <jms:reference-file line="37">/../src/App/AdminBundle/Form/BlockType.php</jms:reference-file>
+        <jms:reference-file line="28">/../src/App/AdminBundle/Form/CategoryType.php</jms:reference-file>
+        <jms:reference-file line="38">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="44">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="37">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5301648dcf6b53cefc9ed52999aaa92d4603cae0" resname="Edit">
+        <source>Edit</source>
+        <target>Edit</target>
+        <jms:reference-file line="80">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="118">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="56">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="103">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="100">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cc588addaafbe0e249f6df144b7e7b369aaba0f7" resname="Edit attribute">
+        <source>Edit attribute</source>
+        <target state="new">Edit attribute</target>
+        <jms:reference-file line="56">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="add13aac45d8c78fc1fc8a549ed609caaa0a593e" resname="Edit block">
+        <source>Edit block</source>
+        <target>Edit block</target>
+        <jms:reference-file line="80">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17e45f8f7000fe763b4ddab1f1c67b34ebefb317" resname="Edit page">
+        <source>Edit page</source>
+        <target>Edit page</target>
+        <jms:reference-file line="116">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="101">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="98">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
+        <source>Email</source>
+        <target state="new">Email</target>
+        <jms:reference-file line="5">/../src/App/FrontBundle/Resources/views/Emails/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="47">/../src/App/FrontBundle/Resources/views/Page/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="89d10cd6c1e1437d6318d6fbb25a40e0aaaddd34" resname="End date">
+        <source>End date</source>
+        <target state="new">End date</target>
+        <jms:reference-file line="103">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad8919ace091b14011c6439cfd5e1707b58f5abd" resname="Event">
+        <source>Event</source>
+        <target state="new">Event</target>
+        <jms:reference-file line="133">/../src/App/AdminBundle/Twig/Extension/AppExtension.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68370e8033679663f8238f491ca9c1ba9f0c5890" resname="Event attribute creation">
+        <source>Event attribute creation</source>
+        <target state="new">Event attribute creation</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/EventAttribute/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7cf0c27473e442e4c117de5bcd7f55ace5ce0564" resname="Event attribute edit">
+        <source>Event attribute edit</source>
+        <target state="new">Event attribute edit</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/EventAttribute/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b0d0f53871027b32b363229992edb9bf4fa820d" resname="Event attributes">
+        <source>Event attributes</source>
+        <target state="new">Event attributes</target>
+        <jms:reference-file line="121">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="11">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c06a794cc466e113be34a5e8a71b6802da777872" resname="Event creation">
+        <source>Event creation</source>
+        <target>Event creation</target>
+        <jms:reference-file line="21">/../src/App/AdminBundle/Resources/views/Event/newWeb.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="def95e5e6df54d94d843c6d924f0baf621d8e86f" resname="Event description">
+        <source>Event description</source>
+        <target state="new">Event description</target>
+        <jms:reference-file line="35">/../src/App/FrontBundle/Resources/views/Events/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa6c6f7bc748139dd231b7f78114413db919730e" resname="Event edit">
+        <source>Event edit</source>
+        <target>Event edit</target>
+        <jms:reference-file line="21">/../src/App/AdminBundle/Resources/views/Event/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4f9333d4edf19f402ec6ffe102762eb4e53feee5" resname="Event not found!">
+        <source>Event not found!</source>
+        <target state="new">Event not found!</target>
+        <jms:reference-file line="154">/../src/App/FrontBundle/Controller/EventsController.php</jms:reference-file>
+        <jms:reference-file line="79">/../src/App/FrontBundle/Controller/EventsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1878f0eb914c7fcfb56989489bbb4adba4f2b401" resname="Event schedule">
+        <source>Event schedule</source>
+        <target state="new">Event schedule</target>
+        <jms:reference-file line="133">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5497bca58468ae64aed6c0fd921109217988db3" resname="Events">
+        <source>Events</source>
+        <target>Events</target>
+        <jms:reference-file line="105">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c00a8c8cf1084ac7e9f15bdfe719e8a5d461fd5" resname="Events archive">
+        <source>Events archive</source>
+        <target state="new">Events archive</target>
+        <jms:reference-file line="8">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0f6d7d90b8e0fc1d24ecd67407f0b51343f241e2" resname="Events attributes">
+        <source>Events attributes</source>
+        <target state="new">Events attributes</target>
+        <jms:reference-file line="131">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="90db8de98f60078cadd1e83ad886c56645be3ac1" resname="Events calendar">
+        <source>Events calendar</source>
+        <target>Events calendar</target>
+        <jms:reference-file line="1131">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1142">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1362">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="153">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="351">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="753">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="11">/../src/App/FrontBundle/Resources/views/Events/calendar.html.twig</jms:reference-file>
+        <jms:reference-file line="83">/../src/App/FrontBundle/Resources/views/Events/item.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/App/FrontBundle/Resources/views/Page/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4c3f24d8f953494d370afc60194c04b37c52275a" resname="Events categories">
+        <source>Events categories</source>
+        <target>Events categories</target>
+        <jms:reference-file line="124">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee6e3aada3b94b85cac269ed8940fdf914412d2e" resname="Events galleries">
+        <source>Events galleries</source>
+        <target state="new">Events galleries</target>
+        <jms:reference-file line="4">/../src/App/FrontBundle/Resources/views/Events/home_galleries_list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d00fa2b53d83f5f24bbef4acc54de557da5a14f" resname="Events list">
+        <source>Events list</source>
+        <target>Events list</target>
+        <jms:reference-file line="22">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="10">/../src/App/FrontBundle/Resources/views/Events/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5c3a35ef85f22d508f90171bdcb2e6d820731d20" resname="February">
+        <source>February</source>
+        <target state="new">February</target>
+        <jms:reference-file line="77">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8914e546b593cd4260b465310dabe91e3da85239" resname="File manager">
+        <source>File manager</source>
+        <target>File manager</target>
+        <jms:reference-file line="98">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b5d11ae2b82f0f0664b011d14f9761f711fd0ed" resname="From date">
+        <source>From date</source>
+        <target state="new">From date</target>
+        <jms:reference-file line="30">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="33">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f26c677d206dd813d63591beb22113eee3715527" resname="Galleries">
+        <source>Galleries</source>
+        <target state="new">Galleries</target>
+        <jms:reference-file line="8">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c30a3485a5887f1ba5abd2a291d304a01863e55" resname="Gallery">
+        <source>Gallery</source>
+        <target state="new">Gallery</target>
+        <jms:reference-file line="10">/../src/App/FrontBundle/Resources/views/Events/single_gallery.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71a5520c38d4e6756cbc34ccb6c1fa56b7d8a3e3" resname="Gallery images">
+        <source>Gallery images</source>
+        <target>Gallery images</target>
+        <jms:reference-file line="108">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="23">/../src/App/AdminBundle/Form/ImageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0" resname="Hello">
+        <source>Hello</source>
+        <target state="new">Hello</target>
+        <jms:reference-file line="1">/../src/App/FrontBundle/Resources/views/Emails/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86aa70f356a5d49d93503bc27a2572b1b08818a4" resname="Hello in CMS!">
+        <source>Hello in CMS!</source>
+        <target state="new">Hello in CMS!</target>
+        <jms:reference-file line="3">/../src/App/UserBundle/Resources/views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="53f0ce0273a3520eea5b3becf644d23450f2a637" resname="Is promo event?">
+        <source>Is promo event?</source>
+        <target>Is promo event?</target>
+        <jms:reference-file line="117">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a3ea9193830e0b393f86d9b95e4eabe32815760f" resname="Is promo?">
+        <source>Is promo?</source>
+        <target>Is promo?</target>
+        <jms:reference-file line="87">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7636d16f7a02e0492f646f433863e941db2225d" resname="It is contact email">
+        <source>It is contact email</source>
+        <target state="new">It is contact email</target>
+        <jms:reference-file line="2">/../src/App/FrontBundle/Resources/views/Emails/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b56b71bb7fa1e82d2258c1059f3c5f5155975955" resname="Item name">
+        <source>Item name</source>
+        <target state="new">Item name</target>
+        <jms:reference-file line="37">/../src/App/AdminBundle/Form/EventScheduleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a22d73d336abd6281d4dd71080220a230cb79de" resname="January">
+        <source>January</source>
+        <target state="new">January</target>
+        <jms:reference-file line="76">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df97a42549e5c0e1753b985126565531cc9f3c56" resname="July">
+        <source>July</source>
+        <target state="new">July</target>
+        <jms:reference-file line="82">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a9db906761699b31567727716eaa6fd19ae5f5d5" resname="June">
+        <source>June</source>
+        <target state="new">June</target>
+        <jms:reference-file line="81">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="035be731e67ddf37f6a5c30721a085f5c0285e9a" resname="Keep up to date - subscribe to the newsletter!">
+        <source>Keep up to date - subscribe to the newsletter!</source>
+        <target state="new">Keep up to date - subscribe to the newsletter!</target>
+        <jms:reference-file line="2">/../src/App/FrontBundle/Resources/views/layout/newsletter.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1fffaaafb7cc996685bceb829c053cc4f7de43d" resname="List">
+        <source>List</source>
+        <target>List</target>
+        <jms:reference-file line="116">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e5a2893bdcc7d239c1db72e4c4ffbe4bea73174" resname="Login">
+        <source>Login</source>
+        <target state="new">Login</target>
+        <jms:reference-file line="33">/../src/App/UserBundle/Resources/views/Security/login.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5fcb2185031d43634ca2f7d46af3d09e78cd77c" resname="Main image">
+        <source>Main image</source>
+        <target>Main image</target>
+        <jms:reference-file line="86">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="95">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="83">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="433632ea5cd64cd163c3a390d5e531d33da3c5e5" resname="March">
+        <source>March</source>
+        <target state="new">March</target>
+        <jms:reference-file line="78">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c94f479833c5d401cffdfa7afe6c9c2d56448019" resname="May">
+        <source>May</source>
+        <target state="new">May</target>
+        <jms:reference-file line="80">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68f4145fee7dde76afceb910165924ad14cf0d00" resname="Message">
+        <source>Message</source>
+        <target state="new">Message</target>
+        <jms:reference-file line="54">/../src/App/FrontBundle/Resources/views/Page/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <source>Name</source>
+        <target>Name</target>
+        <jms:reference-file line="34">/../src/App/AdminBundle/Form/BlockType.php</jms:reference-file>
+        <jms:reference-file line="25">/../src/App/AdminBundle/Form/CategoryType.php</jms:reference-file>
+        <jms:reference-file line="33">/../src/App/AdminBundle/Form/EventAttributeType.php</jms:reference-file>
+        <jms:reference-file line="35">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="38">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="34">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+        <jms:reference-file line="62">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="84">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="73">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="72">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">/../src/App/FrontBundle/Resources/views/Emails/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8cc47d2da1044a040c54620b5d4d94d99392a165" resname="Name and surname">
+        <source>Name and surname</source>
+        <target state="new">Name and surname</target>
+        <jms:reference-file line="41">/../src/App/FrontBundle/Resources/views/Page/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34c808d0a63f277e04fb23a5f76cc83d0a3e024b" resname="News">
+        <source>News</source>
+        <target>News</target>
+        <jms:reference-file line="71">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="131">/../src/App/AdminBundle/Twig/Extension/AppExtension.php</jms:reference-file>
+        <jms:reference-file line="1046">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1120">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="121">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1351">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="315">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="717">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="13">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="942e7b145b6f9dbf67dcbe8f2df8dee505220467" resname="News categories">
+        <source>News categories</source>
+        <target>News categories</target>
+        <jms:reference-file line="90">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="970d7ce53ae011acda30fbfa27b5e1e178288e90" resname="News creation">
+        <source>News creation</source>
+        <target>News creation</target>
+        <jms:reference-file line="19">/../src/App/AdminBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8d5fd26c8c6a74d82a557c4c4720a2b4cdc4dc0c" resname="News edit">
+        <source>News edit</source>
+        <target>News edit</target>
+        <jms:reference-file line="19">/../src/App/AdminBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5518cec24dd0ba0f6c47fc903ffe9d3dca853ba4" resname="News list">
+        <source>News list</source>
+        <target>News list</target>
+        <jms:reference-file line="82">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="19">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="816c52fd2bdd94a63cd0944823a6c0aa9384c103" resname="No">
+        <source>No</source>
+        <target>No</target>
+        <jms:reference-file line="75">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="110">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="111">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="96">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="93">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fed1f5cd946a327d187f842db23041ecd3553315" resname="Nothing found">
+        <source>Nothing found</source>
+        <target>Nothing found</target>
+        <jms:reference-file line="12">/../src/App/FrontBundle/Resources/views/Event/homeEvents.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/App/FrontBundle/Resources/views/Events/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc2a39655029ea70e6b3b127190e6b8183cb91d0" resname="Nothing was found">
+        <source>Nothing was found</source>
+        <target state="new">Nothing was found</target>
+        <jms:reference-file line="17">/../src/App/FrontBundle/Resources/views/Search/search_list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa18747e2d9ff3481758d0e6b15e7e86b27630b0" resname="Novemeber">
+        <source>Novemeber</source>
+        <target state="new">Novemeber</target>
+        <jms:reference-file line="86">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87206ae2363483496c099f8c3aac5b4a8ae2a66a" resname="October">
+        <source>October</source>
+        <target state="new">October</target>
+        <jms:reference-file line="85">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb06270f7c212baabc8749ffc36e49dc8f321548" resname="Page">
+        <source>Page</source>
+        <target state="new">Page</target>
+        <jms:reference-file line="135">/../src/App/AdminBundle/Twig/Extension/AppExtension.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7baadb3241b89ba8218a53d7970696d41b6782b" resname="Page creation">
+        <source>Page creation</source>
+        <target>Page creation</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/Page/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23db8ddb2778692b298d78e0abd01004e151f312" resname="Page edit">
+        <source>Page edit</source>
+        <target>Page edit</target>
+        <jms:reference-file line="10">/../src/App/AdminBundle/Resources/views/Page/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f08f180be8c593a276f5443efc0baa73155ea0da" resname="Page not found!">
+        <source>Page not found!</source>
+        <target>Page not found!</target>
+        <jms:reference-file line="85">/../src/App/FrontBundle/Controller/DefaultController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="600584c2d5ccb97c0c0c424d9f32d6b102fcb040" resname="Pages">
+        <source>Pages</source>
+        <target>Pages</target>
+        <jms:reference-file line="31">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eae225ad75c34b2059c754ef1014622f9f491254" resname="Pages list">
+        <source>Pages list</source>
+        <target>Pages list</target>
+        <jms:reference-file line="42">/../src/App/AdminBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8544176c9bd1a9a5533b05cd076e718588780299" resname="Parent category">
+        <source>Parent category</source>
+        <target>Parent category</target>
+        <jms:reference-file line="34">/../src/App/AdminBundle/Form/CategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aef05c2870c00c67f7950081ae9498d529611030" resname="Parking">
+        <source>Parking</source>
+        <target>Parking</target>
+        <jms:reference-file line="1188">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1409">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="183">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="585">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="902">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bea8e37ce9feed37a129ed6f8ac79af5ed1df5c6" resname="Please Sign In">
+        <source>Please Sign In</source>
+        <target state="new">Please Sign In</target>
+        <jms:reference-file line="9">/../src/App/UserBundle/Resources/views/Security/login.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="103d83a10470286d89fb8b7d2e9fa03cc471684f" resname="Please enter your email address">
+        <source>Please enter your email address</source>
+        <target state="new">Please enter your email address</target>
+        <jms:reference-file line="4">/../src/App/FrontBundle/Resources/views/layout/newsletter.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b55223c7bdc7651dc4282ba46fc1616dc273128b" resname="Portal">
+        <source>Portal</source>
+        <target state="new">Portal</target>
+        <jms:reference-file line="50">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0c88242e813893ab8ad50b7e16808768f9baafb" resname="Portals">
+        <source>Portals</source>
+        <target>Portals</target>
+        <jms:reference-file line="60">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="69">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="56">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+        <jms:reference-file line="86">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="73">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5ecaf4648dd803cf5402fe6f3b28247bf68345c" resname="Promo?">
+        <source>Promo?</source>
+        <target state="new">Promo?</target>
+        <jms:reference-file line="68">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c9aa3c36b614df595fe8b4a527d58e05746df557" resname="Remember Me">
+        <source>Remember Me</source>
+        <target state="new">Remember Me</target>
+        <jms:reference-file line="27">/../src/App/UserBundle/Resources/views/Security/login.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <source>Remove</source>
+        <target>Remove</target>
+        <jms:reference-file line="81">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="121">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="57">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="106">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="103">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+        <jms:reference-file line="182">/Resources/views/form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="193">/Resources/views/form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="65">/Resources/views/form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="82">/Resources/views/form/fields.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64bd20c644e89666380b8783656e5b6daeaef147" resname="Rental pitches">
+        <source>Rental pitches</source>
+        <target>Rental pitches</target>
+        <jms:reference-file line="554">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="871">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efc007a393f66cdb14d57d385822a3d9e36ef873" resname="Save">
+        <source>Save</source>
+        <target>Save</target>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/Block/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/Block/new.html.twig</jms:reference-file>
+        <jms:reference-file line="18">/../src/App/AdminBundle/Resources/views/Category/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/Category/new.html.twig</jms:reference-file>
+        <jms:reference-file line="50">/../src/App/AdminBundle/Resources/views/Event/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="34">/../src/App/AdminBundle/Resources/views/Event/new.html.twig</jms:reference-file>
+        <jms:reference-file line="50">/../src/App/AdminBundle/Resources/views/Event/newWeb.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/EventAttribute/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/EventAttribute/new.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/App/AdminBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/App/AdminBundle/Resources/views/News/new.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/Page/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/Page/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/App/FrontBundle/Resources/views/layout/newsletter.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
+        <source>Search</source>
+        <target state="new">Search</target>
+        <jms:reference-file line="52">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="73">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="63">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="63">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0144dae8fb18fc9c75bdd6b191b93bae5f7a68f8" resname="Search results">
+        <source>Search results</source>
+        <target state="new">Search results</target>
+        <jms:reference-file line="10">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2941c5ce61f1c507853bc78ba080278269a62f77" resname="See all">
+        <source>See all</source>
+        <target state="new">See all</target>
+        <jms:reference-file line="7">/../src/App/FrontBundle/Resources/views/Events/home_galleries_list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bc2575c3930437e80555f78757b783c842e8e66" resname="Send">
+        <source>Send</source>
+        <target state="new">Send</target>
+        <jms:reference-file line="69">/../src/App/FrontBundle/Resources/views/Page/contact.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1da9d96d6af9a60208291b89f2766e9fbfba7f05" resname="Seo description">
+        <source>Seo description</source>
+        <target state="new">Seo description</target>
+        <jms:reference-file line="51">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="54">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="47">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d90e17a8b708c63ce46de097366c0357c20707a4" resname="Seo keywords">
+        <source>Seo keywords</source>
+        <target state="new">Seo keywords</target>
+        <jms:reference-file line="54">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="57">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="50">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="728a7cc8cb8172e010b3c9aa5adc03ba3a23ed07" resname="Seo title">
+        <source>Seo title</source>
+        <target state="new">Seo title</target>
+        <jms:reference-file line="48">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="51">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="44">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c542e79c9b4257e640ccf72974d61fd590a5c26" resname="September">
+        <source>September</source>
+        <target state="new">September</target>
+        <jms:reference-file line="84">/../src/App/FrontBundle/EventListener/RequestListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="396c2137a0b503759e5d4930af8a16aa28ce3ee7" resname="Short description">
+        <source>Short description</source>
+        <target state="new">Short description</target>
+        <jms:reference-file line="45">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="41">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="25911d48e023cd10fc08d378641ee620f5e39d86" resname="Show more">
+        <source>Show more</source>
+        <target state="new">Show more</target>
+        <jms:reference-file line="56">/../src/App/FrontBundle/Resources/views/Events/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c268b006215a4a8feb645ecd661147527f294aea" resname="Similar events">
+        <source>Similar events</source>
+        <target state="new">Similar events</target>
+        <jms:reference-file line="78">/../src/App/FrontBundle/Resources/views/Events/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73ec30f2a48a3b5b9b481f20c0dc68b5a47918cb" resname="Sort alphabetically (a »z)">
+        <source>Sort alphabetically (a »z)</source>
+        <target state="new">Sort alphabetically (a »z)</target>
+        <jms:reference-file line="29">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f415a4dd29eb161617942d524f7bc963cc81192d" resname="Sort alphabetically (z »a)">
+        <source>Sort alphabetically (z »a)</source>
+        <target state="new">Sort alphabetically (z »a)</target>
+        <jms:reference-file line="30">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d31a1a83a9b8e37aa105622ed06fe5587d7124d" resname="Sort chronologically (1 »9)">
+        <source>Sort chronologically (1 »9)</source>
+        <target state="new">Sort chronologically (1 »9)</target>
+        <jms:reference-file line="31">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+        <jms:reference-file line="29">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef4c2a73accba90e745bfed8e315711d89795e90" resname="Sort chronologically (9 »1)">
+        <source>Sort chronologically (9 »1)</source>
+        <target state="new">Sort chronologically (9 »1)</target>
+        <jms:reference-file line="32">/../src/App/FrontBundle/Resources/views/Events/archive.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/App/FrontBundle/Resources/views/Events/galleries.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/App/FrontBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="42">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="952f375412e89ff213a8aca383d18e5691354347" resname="Start">
+        <source>Start</source>
+        <target>Start</target>
+        <jms:reference-file line="1035">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="1482">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ff99f5b5f7948dfa71fd545b3d99f5f00856ea29" resname="Start date">
+        <source>Start date</source>
+        <target state="new">Start date</target>
+        <jms:reference-file line="98">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3306c1d84364ddac631d4626649b7737f9a099c0" resname="Static blocks">
+        <source>Static blocks</source>
+        <target>Static blocks</target>
+        <jms:reference-file line="19">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c87ee1508ac40276ba2634f94ca3b8ef9c632207" resname="Static pages">
+        <source>Static pages</source>
+        <target>Static pages</target>
+        <jms:reference-file line="19">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="02411ba83362f2980bdb974d5767f807f29babe6" resname="Telebim">
+        <source>Telebim</source>
+        <target>Telebim</target>
+        <jms:reference-file line="1318">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="236">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="638">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="955">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea31f2d697bd0c9989385b3de268dccbd813c575" resname="The list is empty">
+        <source>The list is empty</source>
+        <target>The list is empty</target>
+        <jms:reference-file line="92">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../src/App/AdminBundle/Resources/views/Category/index.html.twig</jms:reference-file>
+        <jms:reference-file line="132">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="68">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="117">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="114">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b7714b97381d28e070714e428880eb44c2719bc" resname="There are not any galleries">
+        <source>There are not any galleries</source>
+        <target state="new">There are not any galleries</target>
+        <jms:reference-file line="18">/../src/App/FrontBundle/Resources/views/Events/galleries_list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e868c4da203d055aefc5ab7f8df0b971ef6178ff" resname="There are not any news to show">
+        <source>There are not any news to show</source>
+        <target state="new">There are not any news to show</target>
+        <jms:reference-file line="16">/../src/App/FrontBundle/Resources/views/News/items.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c82e6dd86807ee3db07e3c82bec1ae1ce00b08b" resname="Time">
+        <source>Time</source>
+        <target state="new">Time</target>
+        <jms:reference-file line="44">/../src/App/AdminBundle/Form/EventScheduleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="af244da36014a4fa21c4776fd6fd546905e10a42" resname="To date">
+        <source>To date</source>
+        <target state="new">To date</target>
+        <jms:reference-file line="39">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="42">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8ad8302d110b05d7e02330dac58628134fdcff02" resname="Translations">
+        <source>Translations</source>
+        <target state="new">Translations</target>
+        <jms:reference-file line="31">/../src/App/AdminBundle/Form/BlockType.php</jms:reference-file>
+        <jms:reference-file line="22">/../src/App/AdminBundle/Form/CategoryType.php</jms:reference-file>
+        <jms:reference-file line="30">/../src/App/AdminBundle/Form/EventAttributeType.php</jms:reference-file>
+        <jms:reference-file line="34">/../src/App/AdminBundle/Form/EventScheduleType.php</jms:reference-file>
+        <jms:reference-file line="45">/../src/App/AdminBundle/Form/EventToAttributeType.php</jms:reference-file>
+        <jms:reference-file line="32">/../src/App/AdminBundle/Form/EventType.php</jms:reference-file>
+        <jms:reference-file line="35">/../src/App/AdminBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="31">/../src/App/AdminBundle/Form/PageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3deb7456519697ecf4eefc455516c969a3681bae" resname="Type">
+        <source>Type</source>
+        <target state="new">Type</target>
+        <jms:reference-file line="37">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1abcabd808c2ce0c0cc916a830f0729cf7f68999" resname="Upcoming events">
+        <source>Upcoming events</source>
+        <target state="new">Upcoming events</target>
+        <jms:reference-file line="18">/../src/App/FrontBundle/Resources/views/Page/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="307fd06961c6145ce10557e9b092f2365e480405" resname="Updated at">
+        <source>Updated at</source>
+        <target>Updated at</target>
+        <jms:reference-file line="65">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="90">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="76">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9792dcb5b8296c1fde20c0e741aead0632731b5a" resname="Vip rings">
+        <source>Vip rings</source>
+        <target>Vip rings</target>
+        <jms:reference-file line="1283">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="223">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="625">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+        <jms:reference-file line="942">/../src/App/FrontBundle/Menu/Builder.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffca59bc5b7dadbd212670e6b6a56cc99bdf495f" resname="What are you looking for?">
+        <source>What are you looking for?</source>
+        <target state="new">What are you looking for?</target>
+        <jms:reference-file line="25">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5397e0583f14f6c88de06b1ef28f460a1fb5b0ae" resname="Yes">
+        <source>Yes</source>
+        <target>Yes</target>
+        <jms:reference-file line="75">/../src/App/AdminBundle/Resources/views/Block/index.html.twig</jms:reference-file>
+        <jms:reference-file line="110">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="111">/../src/App/AdminBundle/Resources/views/Event/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/App/AdminBundle/Resources/views/EventAttribute/index.html.twig</jms:reference-file>
+        <jms:reference-file line="96">/../src/App/AdminBundle/Resources/views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="93">/../src/App/AdminBundle/Resources/views/Page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61bb8d29b5be7db307cb29005bff087ebe300454" resname="back">
+        <source>back</source>
+        <target state="new">back</target>
+        <jms:reference-file line="8">/../src/App/FrontBundle/Resources/views/Events/single_gallery.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e927d0677c77241b707442314346326278051dd6" resname="date">
+        <source>date</source>
+        <target state="new">date</target>
+        <jms:reference-file line="57">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+        <jms:reference-file line="9">/../src/App/FrontBundle/Resources/views/Search/search_list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52ab86a87214a453d9f82538264f190854915247" resname="hour">
+        <source>hour</source>
+        <target state="new">hour</target>
+        <jms:reference-file line="18">/../src/App/FrontBundle/Resources/views/Events/calendar_days.html.twig</jms:reference-file>
+        <jms:reference-file line="20">/../src/App/FrontBundle/Resources/views/Events/item.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7c95b4c28243c79cd41d964c2c889a4d29d25da" resname="more">
+        <source>more</source>
+        <target state="new">more</target>
+        <jms:reference-file line="14">/../src/App/FrontBundle/Resources/views/Events/archive_events.html.twig</jms:reference-file>
+        <jms:reference-file line="12">/../src/App/FrontBundle/Resources/views/News/items.html.twig</jms:reference-file>
+        <jms:reference-file line="59">/../src/App/FrontBundle/Resources/views/Search/search.html.twig</jms:reference-file>
+        <jms:reference-file line="12">/../src/App/FrontBundle/Resources/views/Search/search_list.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

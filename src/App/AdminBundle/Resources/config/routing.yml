@@ -1,0 +1,29 @@
+app_admin_homepage:
+    path:     /
+    defaults: { _controller: AppAdminBundle:Index:index }
+
+app_admin_page:
+    resource: "@AppAdminBundle/Resources/config/routing/page.yml"
+    prefix:   /page
+
+app_admin_file_manager:
+    path:     /file-manager
+    defaults: { _controller: AppAdminBundle:FileManager:show }
+
+app_admin_category:
+    resource: "@AppAdminBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+app_admin_block:
+    resource: "@AppAdminBundle/Resources/config/routing/block.yml"
+    prefix:   /block
+
+app_admin_settings:
+    resource: "@AppAdminBundle/Resources/config/routing/settings.yml"
+    prefix:   /settings
+
+app_admin_agents:
+    resource: "@AppAdminBundle/Resources/config/routing/agents.yml"
+    prefix:   /agents
+
+

@@ -1,0 +1,53 @@
+imports:
+    - { resource: config.yml }
+
+doctrine:
+    orm:
+        metadata_cache_driver: apcu
+        result_cache_driver: apcu
+        query_cache_driver: apcu
+
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested
+        nested:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: debug
+        console:
+            type: console
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+     cssrewrite: ~
+     uglifyjs2:
+       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
+     uglifycss:
+       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
+     less:
+       node: /usr/local/bin/node
+       node_paths: [/usr/local/lib/node_modules]
+    bundles:
+        - AppAdminBundle
+        - AppFrontBundle
+    variables:
+        locale: "%locales%"
+    assets:
+      BwModelica:
+        inputs: 'templates/fonts/BwModelica-ExtraBold.otf'
+        output: 'fonts/BwModelica-ExtraBold.otf'
+      UnitedSansRgMd:
+        inputs: 'templates/fonts/UnitedSansRgMd.otf'
+        output: 'fonts/UnitedSansRgMd.otf'
+      UnitedSansRgBk:
+        inputs: 'templates/fonts/UnitedSansRgBk.otf'
+        output: 'fonts/UnitedSansRgBk.otf'
+
+
+
+

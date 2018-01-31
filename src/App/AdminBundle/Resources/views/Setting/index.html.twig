@@ -1,0 +1,74 @@
+{% extends '@AppAdmin/layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <div class="clearfix"></div>
+        {% include '@AppAdmin/Setting/partials/buttons.html.twig' %}
+
+
+        <fieldset>
+            <legend><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'Settings'|trans }}</legend>
+        </fieldset>
+
+        <form class="form-inline" method="get">
+            <div class="form-group">
+                <input pattern=".{3,}" title="3 characters minimum" value="{{ app.request.get('query') }}" type="text"
+                       class="form-control" name="query" id="query"
+                       placeholder="{{ 'What are you looking for?'|trans }}">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> {{ 'Search'|trans }}</button>
+        </form>
+        <script>
+            datetimepickerRange();
+        </script>
+        <div class="clearfix"><br/></div>
+
+        {% if pagination|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-striped table-condensed">
+                    <thead>
+                    <tr>
+                        <th>{{ knp_pagination_sortable(pagination, 'Name'|trans, 't.name') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Value'|trans, 't.description') }}</th>
+                        <th>{{ 'Actions'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for record in pagination %}
+                        <tr>
+                            <td>
+                                <a href="{{ path('settings_edit', { 'id': record.id }) }}">{{ record.translate.name }}</a>
+                            </td>
+                            <td>{{ record.translate.description|raw|truncate(120) }}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="">
+                                    <a title="{{ 'Edit setting'|trans }}"
+                                       href="{{ path('settings_edit', {id: record.id}) }}"
+                                       class="btn btn-sm btn-primary"><i
+                                                class="fa fa-pencil-square-o"></i> {{ 'Edit'|trans }}</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p class="text-danger text-left">{{ 'The list is empty'|trans }}</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

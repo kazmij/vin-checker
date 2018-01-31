@@ -1,0 +1,105 @@
+.puppy-card.puppy-card-10 {
+  .layer {
+    &.layer-image {
+
+    }
+    &.layer-layout {
+      background-image: url(/templates/frames/img/layouts/10/layout.png);
+    }
+    &.layer-adopt-me {
+      background-image: url(/templates/frames/img/badge-adopt-me.png);
+    }
+      &.layer-content {
+        .content {
+          &.content-name {
+            top: 10.6%;
+            left: 8%;
+            width: 77%;
+            height: 4.2%;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            align-items: center;
+            -webkit-flex-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            /* justify-content: center; */
+            color: #663727;
+            text-transform: uppercase;
+            font-size: 1.8em;
+            font-family: 'UnitedSansRg';
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transform-origin: left top;
+            -webkit-transform-origin: left top;
+            transform: rotate(-5deg);
+            -webkit-transform: rotate(-5deg);
+
+          }
+          &.content-location {
+            top: 14.4%;
+            left: 8.5%;
+            width: 77%;
+            height: 3.5%;
+            text-align: center;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            align-items: center;
+            -webkit-flex-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            /* justify-content: center; */
+            color: #663727;
+            text-transform: uppercase;
+            font-size: 1em;
+            font-family: 'UnitedSansRg';
+            font-weight: bold;
+            transform-origin: left top;
+            -webkit-transform-origin: left top;
+            transform: rotate(-5deg);
+            -webkit-transform: rotate(-5deg);
+          }
+          &.content-statistics {    
+            top: 69%;
+            left: 10%;
+            width: 80%;
+            min-height: 20%;
+            height: auto;
+            transform-origin: top left;
+            -webkit-transform-origin: top left;
+            transform: rotate(-5deg);
+            -webkit-transform:  rotate(-5deg);
+            .statistic {
+              padding-bottom: 0.1em;
+              float: left;
+              width: 50%;
+              &:nth-child(2n + 3) {
+                clear: both;
+              }
+              .label {
+                color: #db3c85;
+                font-family: 'UnitedSansRg';
+                line-height: 0.9em;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                padding: 0;
+              }
+              .value {
+                font-family: 'UnitedSansRg';
+                font-weight: bold;
+                color: #663727;
+                font-size: 1.2em;
+                line-height: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
