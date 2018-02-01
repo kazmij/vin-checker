@@ -1,0 +1,10 @@
+h1.pageHeader {
+  margin-bottom: 20px;
+}
+label.required:after {
+  content: '*';
+  display: inline-block;
+  padding-left: 3px;
+  color: #9e0505;
+  font-weight: bold;
+}

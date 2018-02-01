@@ -21,20 +21,20 @@ monolog:
             type: console
 
 assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-     cssrewrite: ~
-     uglifyjs2:
-       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
-     uglifycss:
-       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
-     less:
-       node: /usr/local/bin/node
-       node_paths: [/usr/local/lib/node_modules]
-    bundles:
-        - AppAdminBundle
-        - AppFrontBundle
+#    debug:          '%kernel.debug%'
+#    use_controller: '%kernel.debug%'
+#    filters:
+#     cssrewrite: ~
+#     uglifyjs2:
+#       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
+#     uglifycss:
+#       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
+#     less:
+#       node: /usr/local/bin/node
+#       node_paths: [/usr/local/lib/node_modules]
+#    bundles:
+#        - AppAdminBundle
+#        - AppFrontBundle
     variables:
         locale: "%locales%"
     assets:

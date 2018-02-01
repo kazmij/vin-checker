@@ -89,13 +89,13 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
      cssrewrite: ~
-     less:
-       node: /usr/local/bin/node
-       node_paths: [/usr/local/lib/node_modules]
-     uglifyjs2:
-       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
-     uglifycss:
-       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
+#     less:
+#       node: /usr/local/bin/node
+#       node_paths: [/usr/local/lib/node_modules]
+#     uglifyjs2:
+#       bin: "%kernel.root_dir%/../node_modules/uglify-js/bin/uglifyjs"
+#     uglifycss:
+#       bin:  "%kernel.root_dir%/../node_modules/uglifycss/uglifycss"
     bundles:
         - AppAdminBundle
         - AppFrontBundle
