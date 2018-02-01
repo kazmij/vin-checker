@@ -123,37 +123,4 @@ class Category extends Content implements ORMBehaviors\Tree\NodeInterface, \Arra
         return $this->hash;
     }
 
-    /**
-     * Add petStat
-     *
-     * @param \App\AdminBundle\Entity\PetStats $petStat
-     *
-     * @return Category
-     */
-    public function addPetStat(\App\AdminBundle\Entity\PetStats $petStat)
-    {
-        $this->petStats[] = $petStat;
-
-        return $this;
-    }
-
-    /**
-     * Remove petStat
-     *
-     * @param \App\AdminBundle\Entity\PetStats $petStat
-     */
-    public function removePetStat(\App\AdminBundle\Entity\PetStats $petStat)
-    {
-        $this->petStats->removeElement($petStat);
-    }
-
-    /**
-     * Get petStats
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPetStats()
-    {
-        return $this->petStats;
-    }
 }
