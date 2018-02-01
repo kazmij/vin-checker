@@ -13,7 +13,6 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /web/bundles/
-/web/bower_components
 /bower_components
 /startbootstrap-sb-admin-2-gh-pages
 /templates
