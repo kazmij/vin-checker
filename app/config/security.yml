@@ -36,8 +36,8 @@ security:
                 always_use_default_target_path: false
                 default_target_path: /agent/profile
             logout:
-                path:           /admin/logout
-                target:         /admin/login
+                path:           /agent/logout
+                target:         /agent/login
             anonymous:    true
 
     access_control:
