@@ -17,5 +17,131 @@
         {% if page is defined %}
             {{ page.translate.description|raw }}
         {% endif %}
+
+        <div class="col-md-6 col-sm-12 col-md-push-3 text-center">
+            <h4 class="pull-center text-center">Sprawdź auto po numerze VIN</h4>
+            <form class="form pull-center">
+                <div class="form-group">
+                    <input value="{{ app.request.get('vinNumber') }}" name="vinNumber" required type="text"
+                           class="form-control text-center" id="vin" placeholder="Numer VIN szukanego pojazdu">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Sprawdź</button>
+            </form>
+        </div>
+        <div class="clearfix"><br/><br/></div>
+        {% if app.request.get('vinNumber') %}
+            <h3>Informacje o aucie z numerem VIN: <strong>{{ app.request.get('vinNumber') }}</strong></h3>
+            <div class="col-md-8 col-sm-12 col-md-push-2">
+                {% if car is defined and car %}
+                    {% if car.photos.count > 0 %}
+                        <a data-fancybox="groupCar{{ car.id }}" class="fancybox"
+                           href="{{ ('/uploads/' ~ car.photos.first.path)|imagine_filter('1024x768') }}">
+                            <img class="img-thumbnail text-center"
+                                 src="{{ ('/uploads/' ~ car.photos.first.path)|imagine_filter('240x235') }}"/>
+                        </a>
+                    {% endif %}
+                    <table class="table table-condensed table-hover table-bordered">
+                        <tr>
+                            <th>Marka</th>
+                            <td>{{ car.manufacturer ? car.manufacturer.name : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Model</th>
+                            <td>{{ car.model ? car.model.name : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Wersja</th>
+                            <td>{{ car.modelTrim ? car.modelTrim.name : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Rok produkcji</th>
+                            <td>{{ car.yearOfManufacture }}</td>
+                        </tr>
+                        <tr>
+                            <th>VIN</th>
+                            <td>{{ car.vin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Aktualny przebieg</th>
+                            <td>{{ car.mileagesHistory.count > 0 ? car.mileagesHistory.first.mileage : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Liczba szkód</th>
+                            <td>{{ car.accidentsHistory.count }}</td>
+                        </tr>
+                        <tr>
+                            <th>Ostatnia szkoda</th>
+                            <td>{{ car.accidentsHistory.count > 0 ? car.accidentsHistory.first.accidentDate|date('Y-m-d') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Kolor</th>
+                            <td>{{ car.color }}</td>
+                        </tr>
+                        <tr>
+                            <th>Opis</th>
+                            <td>{{ car.description }}</td>
+                        </tr>
+                    </table>
+                    {% if car.accidentsHistory.count %}
+                        <h4>Szkody pojazdu</h4>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            {% for accident in car.accidentsHistory %}
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#accident{{ accident.id }}" aria-expanded="true"
+                                               aria-controls="accident{{ accident.id }}">
+                                                {{ accident.accidentDate|date('Y-m-d') }}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="accident{{ accident.id }}" class="panel-collapse collapse in"
+                                         role="tabpanel" aria-labelledby="accidentPanel{{ accident.id }}">
+                                        <div class="panel-body">
+                                            <table class="table table-condensed table-hover table-bordered">
+                                                <tr>
+                                                    <th>Miejsce szkody</th>
+                                                    <td>{{ accident.place }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Opis szkody</th>
+                                                    <td>{{ accident.description }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Ówczesny przebieg</th>
+                                                    <td>{{ accident.mileagesHistory.count > 0 ? accident.mileagesHistory.first.mileage : '' }}</td>
+                                                </tr>
+                                                {% if accident.photos.count > 0 %}
+                                                    <tr>
+                                                        <th>Zdjęcia szkody</th>
+                                                        <td>
+                                                            <ul class="list-inline list-unstyled">
+                                                                {% for photo in accident.photos %}
+                                                                    <li>
+                                                                        <a data-fancybox="groupCar{{ car.id }}" class="fancybox"
+                                                                           href="{{ ('/uploads/' ~ photo.path)|imagine_filter('1024x768') }}">
+                                                                            <img class="img-thumbnail text-center"
+                                                                                 src="{{ ('/uploads/' ~ photo.path)|imagine_filter('140x140') }}"/>
+                                                                        </a>
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                {% endif %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <br/>
+                    <p class="text-center text-danger"><strong>Nie znaleziono takiego pojazdu.</strong></p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

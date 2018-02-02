@@ -30,6 +30,12 @@ class DefaultController extends MainController
             'page' => $homePage
         ];
 
+        if($request->get('vinNumber')) {
+            $vinNumber = $request->get('vinNumber');
+            $car = $this->get('app.car_repository')->findOneByVin($vinNumber);
+            $responseData['car'] = $car;
+        }
+
         $response = $this->render('AppFrontBundle:Default:index.html.twig', $responseData);
 
         return $response;

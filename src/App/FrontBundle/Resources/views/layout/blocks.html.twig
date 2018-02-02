@@ -1,5 +1,6 @@
 {% block stylesheets %}
     {% stylesheets
+    'bower_components/jquery-fancyBox/dist/jquery.fancybox.min.css'
     'templates/css/styles.css' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
@@ -8,6 +9,7 @@
 {% block javascripts %}
     {% javascripts output='js/scripts.js'
     'templates/js/jquery.lazyload.js'
+    'bower_components/jquery-fancyBox/dist/jquery.fancybox.min.js'
     'templates/js/scripts.js'
     'templates/js/main.js'%}
     <script src="{{ asset_url }}"></script>

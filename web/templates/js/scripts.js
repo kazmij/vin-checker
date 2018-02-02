@@ -99,4 +99,8 @@ $(document).ready(function () {
         return false;
     });
 
+    if (typeof $.fn.fancybox !== 'undefined') {
+        $('a.fancybox').fancybox();
+    }
+
 });

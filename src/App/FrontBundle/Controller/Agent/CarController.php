@@ -5,6 +5,7 @@ namespace App\FrontBundle\Controller\Agent;
 use App\AdminBundle\Entity\Car;
 use App\AdminBundle\Entity\CarPhoto;
 use App\FrontBundle\Model\Contact;
+use App\UserBundle\Entity\User;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\FrontBundle\Controller\MainController;
@@ -86,6 +87,7 @@ class CarController extends MainController
         $request = $this->get('request_stack')->getCurrentRequest();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            /* @var $car Car */
             $car = $form->getData();
             $data = $request->get($form->getName());
             if (isset($data['trimData'])) {
@@ -123,6 +125,9 @@ class CarController extends MainController
                     }
                 }
             }
+
+            $car->setUser($this->getUser());
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($car);
             $em->flush();

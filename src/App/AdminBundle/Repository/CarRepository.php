@@ -61,6 +61,12 @@ class CarRepository extends \Doctrine\ORM\EntityRepository
             }
         }
 
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+
+        if($user) {
+            $qb->andWhere($qb->expr()->eq('c.user', $user->getId()));
+        }
+
         if ($request->get('active')) {
             $qb->andWhere($qb->expr()->eq('b.active', 1));
         }

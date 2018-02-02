@@ -119,7 +119,7 @@ class Builder
 
 
         $settings = $menu->addChild(
-            '<i class="fa fa-cogs" aria-hidden="true"></i> ' . $translator->trans('Settings') . '<span class="fa arrow"></span>', [
+            '<i class="fa fa-cogs" aria-hidden="true"></i> ' . $translator->trans('Ustawienia') . '<span class="fa arrow"></span>', [
             'uri' => '#',
             'attributes' => [],
             'extras' => [
@@ -130,7 +130,7 @@ class Builder
             'class' => 'nav nav-second-level'
         ]);
 
-        $settings->addChild('<i class="fa fa-list" aria-hidden="true"></i> ' . $translator->trans('Settings list'), [
+        $settings->addChild('<i class="fa fa-list" aria-hidden="true"></i> ' . $translator->trans('Lista'), [
             'route' => 'settings_index',
             'extras' => [
                 'safe_label' => true

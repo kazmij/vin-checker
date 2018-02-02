@@ -114,6 +114,12 @@ class Car extends Content
     protected $trimData;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="car_user_id", referencedColumnName="id", nullable=true, onDelete="CASCADE")
+     */
+    protected $user;
+
+    /**
      * @return mixed
      */
     public function getModelData()
@@ -175,6 +181,7 @@ class Car extends Content
 
     /**
      * @ORM\OneToMany(targetEntity="CarPhoto", mappedBy="car", cascade={"persist", "remove"})
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      */
     protected $photos;
 
@@ -459,5 +466,29 @@ class Car extends Content
     public function getManufacturer()
     {
         return $this->manufacturer;
+    }
+
+    /**
+     * Set user.
+     *
+     * @param \App\UserBundle\Entity\User|null $user
+     *
+     * @return Car
+     */
+    public function setUser(\App\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user.
+     *
+     * @return \App\UserBundle\Entity\User|null
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
