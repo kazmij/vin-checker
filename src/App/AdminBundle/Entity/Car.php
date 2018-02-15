@@ -500,8 +500,7 @@ class Car extends Content
     public function validate(ExecutionContextInterface $context, $payload)
     {
         if($this->getVin()) {
-            $vin = new Number($this->getVin());
-            if (!$vin->valid()) {
+            if (!preg_match('/^[A-HJ-NPR-Z0-9]{17}$/', trim($this->getVin()))) {
                 $context->buildViolation('Numer VIN jest nieprawidłowy!!')
                     ->atPath('vin')
                     ->addViolation();
