@@ -85,12 +85,6 @@ class DefaultController extends MainController
 
         $response = $this->render('AppFrontBundle:Page:item.html.twig', $data);
 
-        // cache for 3600 seconds
-        $response->setSharedMaxAge(3600);
-
-        // (optional) set a custom Cache-Control directive
-        $response->headers->addCacheControlDirective('must-revalidate', true);
-
         return $response;
     }
 

@@ -43,6 +43,7 @@ class AppExtension extends \Twig_Extension
 
         return [
             new \Twig_SimpleFunction('getContentBy', array($this, 'getContentBy')),
+            new \Twig_SimpleFunction('getPages', array($this, 'getPages')),
             new \Twig_SimpleFunction('getParameter', array($this, 'getParameter')),
             new \Twig_SimpleFunction('getCategories', array($this, 'getCategories')),
             new \Twig_SimpleFunction('getBlockContent', array($this, 'getBlockContent')),
@@ -220,5 +221,11 @@ class AppExtension extends \Twig_Extension
 
     public function getUploadPath() {
         return $this->container->get('kernel')->getUploadDir();
+    }
+
+    public function getPages() {
+        return $this->container->get('app.page_repository')->findBy([
+            'active' => 1
+        ]);
     }
 }

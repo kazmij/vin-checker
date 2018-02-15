@@ -8,3 +8,10 @@ label.required:after {
   color: #9e0505;
   font-weight: bold;
 }
+
+#text-page img {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}

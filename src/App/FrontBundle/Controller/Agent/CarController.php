@@ -4,22 +4,16 @@ namespace App\FrontBundle\Controller\Agent;
 
 use App\AdminBundle\Entity\Car;
 use App\AdminBundle\Entity\CarPhoto;
-use App\FrontBundle\Model\Contact;
-use App\UserBundle\Entity\User;
 use Symfony\Component\Form\Form;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\FrontBundle\Controller\MainController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use App\AdminBundle\Entity\Page;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class CarController extends MainController
 {
 
     public function indexAction(Request $request)
     {
-
         $repository = $this->get('app.car_repository');
         $pagination = $this->get('app.paginator')->getPagination($repository);
 

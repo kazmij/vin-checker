@@ -47,7 +47,7 @@ class SettingController extends Controller
             $em->persist($setting);
             $em->flush();
 
-            $this->addFlash('success', sprintf($this->get('translator')->trans("Setting %s has been successfully saved."), $setting->translate()->getName()));
+            $this->addFlash('success', sprintf($this->get('translator')->trans("Ustawienie %s zostało zapisane."), $setting->translate()->getName()));
 
             return $this->redirectToRoute('settings_edit', array('id' => $setting->getId()));
         }
@@ -66,7 +66,7 @@ class SettingController extends Controller
     public function editAction(Request $request, Setting $setting = null)
     {
         if (!$setting) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Setting not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Nie znaleziono ustawienia!")));
 
             return $this->redirectToRoute('settings_index');
         }
@@ -81,7 +81,7 @@ class SettingController extends Controller
             }
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', sprintf($this->get('translator')->trans("Setting %s has been successfully updated."), $setting->translate()->getName()));
+            $this->addFlash('success', sprintf($this->get('translator')->trans("Ustawienie %s zostało zaktualizowane"), $setting->translate()->getName()));
 
             return $this->redirectToRoute('settings_edit', array('id' => $setting->getId()));
         }
@@ -99,7 +99,7 @@ class SettingController extends Controller
     public function deleteAction(Request $request, Setting $setting = null)
     {
         if (!$setting) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Setting not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Nie znaleziono ustawienia!")));
 
             return $this->redirectToRoute('settings_index');
         }
@@ -108,7 +108,7 @@ class SettingController extends Controller
         $name = $setting->translate()->getName();
         $em->remove($setting);
 
-        $this->addFlash('success', sprintf($this->get('translator')->trans("Setting %s has been successfully removed."), $name));
+        $this->addFlash('success', sprintf($this->get('translator')->trans("Ustawienie %s zostało usunięte"), $name));
         $em->flush();
 
         return $this->redirectToRoute('settings_index');
@@ -122,7 +122,7 @@ class SettingController extends Controller
     {
 
         if (!$setting) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Setting not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Nie znaleziono ustawienia!")));
 
             return $this->redirectToRoute('settings_index');
         }

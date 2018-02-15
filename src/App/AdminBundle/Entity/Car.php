@@ -5,6 +5,8 @@ namespace App\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
+use PhillipsData\Vin\Number;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * Car
@@ -490,5 +492,20 @@ class Car extends Content
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * @Assert\Callback
+     */
+    public function validate(ExecutionContextInterface $context, $payload)
+    {
+        if($this->getVin()) {
+            $vin = new Number($this->getVin());
+            if (!$vin->valid()) {
+                $context->buildViolation('Numer VIN jest nieprawidłowy!!')
+                    ->atPath('vin')
+                    ->addViolation();
+            }
+        }
     }
 }

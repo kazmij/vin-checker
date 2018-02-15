@@ -14,7 +14,7 @@
 
 {% block content %}
     <div class="col-lg-12 text-center">
-        {% if page is defined %}
+        {% if page is defined and page %}
             {{ page.translate.description|raw }}
         {% endif %}
 

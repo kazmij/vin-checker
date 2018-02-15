@@ -47,7 +47,7 @@ class PageController extends Controller
             $em->persist($page);
             $em->flush();
 
-            $this->addFlash('success', sprintf($this->get('translator')->trans("Page %s has been successfully saved."), $page->translate()->getName()));
+            $this->addFlash('success', sprintf($this->get('translator')->trans("Strona %s została zapisana!"), $page->translate()->getName()));
 
             return $this->redirectToRoute('page_edit', array('id' => $page->getId()));
         }
@@ -66,7 +66,7 @@ class PageController extends Controller
     public function editAction(Request $request, Page $page = null)
     {
         if (!$page) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Page not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Strony nie znaleziono!")));
 
             return $this->redirectToRoute('page_index');
         }
@@ -81,7 +81,7 @@ class PageController extends Controller
             }
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', sprintf($this->get('translator')->trans("Page %s has been successfully updated."), $page->translate()->getName()));
+            $this->addFlash('success', sprintf($this->get('translator')->trans("Strona %s została zaktualizowana."), $page->translate()->getName()));
 
             return $this->redirectToRoute('page_edit', array('id' => $page->getId()));
         }
@@ -99,7 +99,7 @@ class PageController extends Controller
     public function deleteAction(Request $request, Page $page = null)
     {
         if (!$page) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Page not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Strony nie znaleziono!")));
 
             return $this->redirectToRoute('page_index');
         }
@@ -108,7 +108,7 @@ class PageController extends Controller
         $name = $page->translate()->getName();
         $em->remove($page);
 
-        $this->addFlash('success', sprintf($this->get('translator')->trans("Page %s has been successfully removed."), $name));
+        $this->addFlash('success', sprintf($this->get('translator')->trans("Strona %s zostałą usunięta."), $name));
         $em->flush();
 
         return $this->redirectToRoute('page_index');
@@ -122,7 +122,7 @@ class PageController extends Controller
     {
 
         if (!$page) {
-            $this->addFlash('danger', sprintf($this->get('translator')->trans("Page not found!")));
+            $this->addFlash('danger', sprintf($this->get('translator')->trans("Strony nie znaleziono!")));
 
             return $this->redirectToRoute('page_index');
         }
