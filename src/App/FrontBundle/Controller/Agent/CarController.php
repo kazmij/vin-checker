@@ -32,6 +32,7 @@ class CarController extends MainController
         ]);
 
         if ($this->saveData($form)) {
+            $this->addFlash('success', 'Pojazd został poprawnie zapisany!');
             return $this->redirectToRoute('app_user_agent_cars');
         }
 
@@ -61,6 +62,8 @@ class CarController extends MainController
         ]);
 
         if ($this->saveData($form)) {
+            $this->addFlash('success', 'Pojazd został poprawnie zaktualizowany!');
+
             return $this->redirectToRoute('app_user_agent_cars');
         }
 
