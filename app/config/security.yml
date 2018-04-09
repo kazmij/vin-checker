@@ -27,7 +27,7 @@ security:
                 target:         /admin/login
             anonymous:    true
         agent:
-            pattern: ^/agent
+            pattern: ^/
             form_login:
                 provider: fos_userbundle
                 login_path: /agent/login
