@@ -7,6 +7,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 use PhillipsData\Vin\Number;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use App\AdminBundle\Validator\Constraints\Vin;
 
 /**
  * Car
@@ -56,9 +57,29 @@ class Car extends Content
     protected $mileage;
 
     /**
+     * @Vin
      * @ORM\Column(type="string", nullable=true, unique=true)
      */
     protected $vin;
+
+
+    /**
+     * @Assert\Type(type="alnum")
+     * @ORM\Column(type="string", nullable=false, unique=true)
+     */
+    protected $policyNumber;
+
+    /**
+     * @Assert\DateTime
+     * @ORM\Column(type="datetime")
+     */
+    protected $policyDate;
+
+    /**
+     * @Assert\Type(type="alnum")
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    protected $insurer;
 
     /**
      * @ORM\PostLoad()
@@ -495,16 +516,74 @@ class Car extends Content
     }
 
     /**
-     * @Assert\Callback
+     * Set policyNumber.
+     *
+     * @param string $policyNumber
+     *
+     * @return Car
      */
-    public function validate(ExecutionContextInterface $context, $payload)
+    public function setPolicyNumber($policyNumber)
     {
-        if($this->getVin()) {
-            if (!preg_match('/^[A-HJ-NPR-Z0-9]{17}$/', trim($this->getVin()))) {
-                $context->buildViolation('Numer VIN jest nieprawidłowy!!')
-                    ->atPath('vin')
-                    ->addViolation();
-            }
-        }
+        $this->policyNumber = $policyNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get policyNumber.
+     *
+     * @return string
+     */
+    public function getPolicyNumber()
+    {
+        return $this->policyNumber;
+    }
+
+    /**
+     * Set policyDate.
+     *
+     * @param \DateTime $policyDate
+     *
+     * @return Car
+     */
+    public function setPolicyDate($policyDate)
+    {
+        $this->policyDate = $policyDate;
+
+        return $this;
+    }
+
+    /**
+     * Get policyDate.
+     *
+     * @return \DateTime
+     */
+    public function getPolicyDate()
+    {
+        return $this->policyDate;
+    }
+
+    /**
+     * Set insurer.
+     *
+     * @param string|null $insurer
+     *
+     * @return Car
+     */
+    public function setInsurer($insurer = null)
+    {
+        $this->insurer = $insurer;
+
+        return $this;
+    }
+
+    /**
+     * Get insurer.
+     *
+     * @return string|null
+     */
+    public function getInsurer()
+    {
+        return $this->insurer;
     }
 }

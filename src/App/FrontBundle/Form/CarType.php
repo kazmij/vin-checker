@@ -69,6 +69,20 @@ class CarType extends AbstractType
                 'required' => true,
                 'label' => "VIN"
             ])
+            ->add('insurer', null, [
+                'required' => false,
+                'label' => "Aktualny ubezpieczyciel"
+            ])
+            ->add('policyNumber', null, [
+                'required' => false,
+                'label' => "Numer ostatniej polisy"
+            ])
+            ->add('policyDate', DateType::class, [
+                'required' => false,
+                'label' => "Data ważności ostatniej polisy",
+                'widget' => 'single_text',
+                'html5' => false,
+            ])
             ->add('photosToRemove', HiddenType::class, [
                 'mapped' => false
             ])

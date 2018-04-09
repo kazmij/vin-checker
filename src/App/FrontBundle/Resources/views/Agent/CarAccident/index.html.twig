@@ -9,7 +9,7 @@
     </div>
 
     <div class="col-md-10 col-sm-12">
-        <h1 class="text-center pageHeader">Historia pojazdu #{{ car.id }} ({{ car.manufacturer.name ~ ' -> ' ~ car.model.name ~ (car.modelTrim ? (' -> ' ~ car.modelTrim.name)) ~ ' ' ~  car.yearOfManufacture }}r.)</h1>
+        <h1 class="text-center pageHeader">Historia pojazdu  {{ car.manufacturer.name ~ ' -> ' ~ car.model.name ~ (car.modelTrim ? (' -> ' ~ car.modelTrim.name)) ~ ' ' ~  car.yearOfManufacture }}r.</h1>
         {% include '@AppFront/Agent/CarAccident/partials/buttons.html.twig' %}
         {% if pagination|length > 0 %}
             <div class="table-responsive">

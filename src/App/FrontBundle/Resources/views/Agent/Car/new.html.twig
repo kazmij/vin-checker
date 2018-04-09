@@ -14,7 +14,23 @@
             <div class="panel-heading">Dane pojazdu</div>
             <div class="panel-body">
                 {{ form_start(form) }}
-                {{ form_widget(form) }}
+                {{ form_row(form.manufacturerData) }}
+                {{ form_row(form.modelData) }}
+                {{ form_row(form.trimData) }}
+                {{ form_row(form.vin) }}
+                {{ form_row(form.policyNumber) }}
+                <div class="form-group">
+                    {{ form_label(form.policyDate) }}
+                    <div class="clearfix"></div>
+                    <div class='input-group date datetimepicker col-sm-4 pull-left'>
+                        {{ form_widget(form.policyDate) }}
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                {{ form_rest(form) }}
                 <div class="form-group">
                     <br/>
                     <button type="submit" name="submit" class="btn btn-success btn-lg"><i
@@ -29,4 +45,15 @@
 {% block javascripts %}
     {{ parent() }}
     {% include '@AppFront/Agent/Car/partials/formActions.html.twig' %}
+
+    {% javascripts
+    'bower_components/moment/moment.js'
+    'bower_components/moment/locale/pl.js'
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        datetimepickerDate();
+    </script>
 {% endblock %}

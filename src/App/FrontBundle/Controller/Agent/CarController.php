@@ -42,6 +42,14 @@ class CarController extends MainController
 
     public function editAction(Request $request, Car $car)
     {
+        $loggedUser = $this->getUser();
+
+        if($car->getUser() && $car->getUser()->getId() != $loggedUser->getId()) {
+            $this->addFlash('error', 'Ten pojazd zostałt dodany przez innego agenta i nie może być przez Ciebie edytowany!');
+
+            return $this->redirectToRoute('app_user_agent_cars');
+        }
+
         if(!count($car->getPhotos())) {
             $photo = new CarPhoto();
             $car->addPhoto($photo);
@@ -66,6 +74,14 @@ class CarController extends MainController
      */
     public function removeAction(Request $request, Car $car)
     {
+        $loggedUser = $this->getUser();
+
+        if($car->getUser() && $car->getUser()->getId() != $loggedUser->getId()) {
+            $this->addFlash('error', 'Ten pojazd zostałt dodany przez innego agenta i nie może być przez Ciebie edytowany!');
+
+            return $this->redirectToRoute('app_user_agent_cars');
+        }
+
         $em = $this->getDoctrine()->getManager();
         $this->get('app.helper')->disableSoftDeletable($em);
         $em->remove($car);

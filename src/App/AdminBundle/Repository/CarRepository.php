@@ -80,4 +80,20 @@ class CarRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb;
     }
+
+    public function searchByRequest(Request $request) {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+
+        $query = $this->createQueryBuilder('c');
+
+        if($request->get('vinNumber')) {
+            $query->where($qb->expr()->like('c.vin', $qb->expr()->literal('%' .$request->get('vinNumber'). '%')));
+        }
+        if($request->get('policyNumber')) {
+            $query->where($qb->expr()->like('c.policyNumber', $qb->expr()->literal('%' .$request->get('policyNumber'). '%')));
+        }
+
+        return $query->getQuery()->getResult();
+
+    }
 }

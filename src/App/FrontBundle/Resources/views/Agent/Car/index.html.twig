@@ -24,6 +24,9 @@
                         <th>{{ knp_pagination_sortable(pagination, 'Przebieg(km)'|trans, 'cm.mileage') }}</th>
                         <th>{{ knp_pagination_sortable(pagination, 'Ostatnia szkoda', 'ah.accidentDate') }}</th>
                         <th>Liczba szkód</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Nr. polisy', 'c.policyNumber') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Data ważności polisy', 'c.policyDate') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Ubezpieczyciel', 'c.insurer') }}</th>
                         <th>{{ knp_pagination_sortable(pagination, 'Created at'|trans, 'c.createdAt') }}</th>
                         <th>{{ knp_pagination_sortable(pagination, 'Updated at'|trans, 'c.updatedAt') }}</th>
                         <th>{{ 'Actions'|trans }}</th>
@@ -62,6 +65,9 @@
                             <td>
                                 {{ record.accidentsHistory.count }}
                             </td>
+                            <td>{{ record.policyNumber }}</td>
+                            <td>{{ record.policyDate ? record.policyDate|date('Y-m-d H:i') : '' }}</td>
+                            <td>{{ record.insurer }}</td>
                             <td>{{ record.createdAt|date('Y-m-d H:i') }}</td>
                             <td>{{ record.updatedAt|date('Y-m-d H:i') }}</td>
                             <td>

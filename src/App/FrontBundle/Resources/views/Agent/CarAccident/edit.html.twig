@@ -18,9 +18,8 @@
         {% include '@AppFront/Agent/Profile/partials/nav.html.twig' %}
     </div>
     <div class="col-md-10 col-sm-12">
-        <h1 class="text-center pageHeader">Edycja zdarzenia pojazdu #{{ car.id }}
-            ({{ car.manufacturer.name ~ ' -> ' ~ car.model.name ~ (car.modelTrim ? (' -> ' ~ car.modelTrim.name)) ~ ' ' ~  car.yearOfManufacture }}
-            r.)</h1>
+        <h1 class="text-center pageHeader">Edycja zdarzenia pojazdu {{ car.manufacturer.name ~ ' -> ' ~ car.model.name ~ (car.modelTrim ? (' -> ' ~ car.modelTrim.name)) ~ ' ' ~  car.yearOfManufacture }}
+            r.</h1>
         {% include '@AppFront/Agent/CarAccident/partials/buttonsEdit.html.twig' %}
         <div class="panel panel-success">
             <div class="panel-heading">Dane szkody</div>
