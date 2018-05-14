@@ -13,10 +13,16 @@ app_user_agent_logout:
     defaults: { _controller: AppFrontBundle:Agent/Security:logout }
     methods: [GET]
 
+app_user_agent_profile_:
+    path:     /agent
+    defaults: { _controller: AppFrontBundle:Agent/Profile:index }
+    methods: [GET, POST]
+
 app_user_agent_profile:
     path:     /agent/profile
     defaults: { _controller: AppFrontBundle:Agent/Profile:index }
     methods: [GET, POST]
+
 
 app_user_agent_profile_edit:
     path:     /agent/profile/edit
