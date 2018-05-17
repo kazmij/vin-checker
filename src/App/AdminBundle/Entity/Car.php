@@ -8,6 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PhillipsData\Vin\Number;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use App\AdminBundle\Validator\Constraints\Vin;
+use App\AdminBundle\Validator\Constraints\Policy;
 
 /**
  * Car
@@ -64,6 +65,7 @@ class Car extends Content
 
 
     /**
+     * @Policy
      * @Assert\Type(type="alnum")
      * @ORM\Column(type="string", nullable=false, unique=true)
      */
@@ -413,10 +415,12 @@ class Car extends Content
      *
      * @return Car
      */
-    public function addPhoto(\App\AdminBundle\Entity\CarPhoto $photo)
+    public function addPhoto(\App\AdminBundle\Entity\CarPhoto $photo = null)
     {
-        $this->photos[] = $photo;
-        $photo->setCar($this);
+        if($photo) {
+            $this->photos[] = $photo;
+            $photo->setCar($this);
+        }
 
         return $this;
     }

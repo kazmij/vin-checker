@@ -1,4 +1,6 @@
+{% set usedPhotos = [] %}
 {% if car.photos.count > 0 %}
+    {% set usedPhotos = usedPhotos|merge([car.photos.first.id]) %}
     <a data-fancybox="groupCar{{ car.id }}" class="fancybox"
        href="{{ ('/uploads/' ~ car.photos.first.path)|imagine_filter('1024x768') }}">
         <img class="img-thumbnail text-center"
@@ -95,6 +97,7 @@
                                     <td>
                                         <ul class="list-inline list-unstyled">
                                             {% for photo in accident.photos %}
+                                                {% set usedPhotos = usedPhotos|merge([photo.id]) %}
                                                 <li>
                                                     <a data-fancybox="groupCar{{ car.id }}" class="fancybox"
                                                        href="{{ ('/uploads/' ~ photo.path)|imagine_filter('1024x768') }}">
@@ -113,4 +116,28 @@
             </div>
         {% endfor %}
     </div>
+{% endif %}
+{% if car.photos.count > 1 and usedPhotos|length < car.photos.count %}
+    <table class="table table-condensed table-hover table-bordered">
+        <tr>
+            <th class="text-left">Pozostałe zdjęcia</th>
+        </tr>
+        <tr>
+            <td class="text-left">
+                <ul class="list-inline list-unstyled">
+                    {% for photo in car.photos %}
+                        {% if not inArray(photo.id, usedPhotos) %}
+                            <li>
+                                <a data-fancybox="groupCar{{ car.id }}" class="fancybox"
+                                   href="{{ ('/uploads/' ~ photo.path)|imagine_filter('1024x768') }}">
+                                    <img class="img-thumbnail text-center"
+                                         src="{{ ('/uploads/' ~ photo.path)|imagine_filter('140x140') }}"/>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
 {% endif %}

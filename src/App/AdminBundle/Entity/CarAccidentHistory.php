@@ -109,10 +109,12 @@ class CarAccidentHistory extends Content
      *
      * @return CarAccidentHistory
      */
-    public function addPhoto(\App\AdminBundle\Entity\CarPhoto $photo)
+    public function addPhoto(\App\AdminBundle\Entity\CarPhoto $photo = null)
     {
-        $this->photos[] = $photo;
-        $photo->setCarAccident($this);
+        if($photo) {
+            $this->photos[] = $photo;
+            $photo->setCarAccident($this);
+        }
 
         return $this;
     }

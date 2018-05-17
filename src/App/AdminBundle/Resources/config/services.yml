@@ -123,6 +123,13 @@ services:
         tags:
                 - { name: 'validator.constraint_validator' }
 
+    app.policy_validator:
+        class: App\AdminBundle\Validator\Constraints\PolicyValidator
+        calls:
+                - [ setContainer, ['@service_container'] ]
+        tags:
+                - { name: 'validator.constraint_validator' }
+
 
 
 
